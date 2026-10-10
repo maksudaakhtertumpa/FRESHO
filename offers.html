@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f6b47'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='700' fill='white' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
+
+    <meta name="description" content="Current FRESHO grocery offers and discount codes on fruit, vegetables, dairy and pantry items.">
+    <title>Offers | FRESHO</title>
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <!-- OFFERS PAGE CSS -->
+    <link rel="stylesheet"
+          href="css/offers.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+          rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ANNOUNCEMENT BAR
+========================================================= -->
+
+<div class="announcement-bar">
+
+    <div class="container announcement-content">
+
+        <span>
+            Fresh groceries, made simple
+        </span>
+
+        <span class="announcement-right">
+            Free delivery on orders of RM80 and above
+        </span>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="site-header">
+
+    <div class="container nav-container">
+
+
+        <!-- LOGO -->
+
+        <a href="index.html"
+           class="brand">
+
+            <div class="brand-icon">
+                F
+            </div>
+
+            <div class="brand-text">
+
+                <span class="brand-name">
+                    FRESHO
+                </span>
+
+                <span class="brand-tagline">
+                    Fresh Groceries. Better Living.
+                </span>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- MOBILE MENU -->
+
+        <button class="mobile-menu-btn"
+                aria-label="Open navigation menu">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="main-nav">
+
+            <a href="index.html"
+               class="nav-link">
+                Home
+            </a>
+
+            <a href="products.html"
+               class="nav-link">
+                Products
+            </a>
+
+            <a href="planner.html"
+               class="nav-link">
+                Planner
+            </a>
+
+            <a href="calculator.html"
+               class="nav-link">
+                Calculator
+            </a>
+
+            <a href="tips.html"
+               class="nav-link">
+                Fresh Tips
+            </a>
+
+            <a href="offers.html"
+               class="nav-link active">
+                Offers
+            </a>
+
+            <a href="about.html"
+               class="nav-link">
+                About
+            </a>
+
+            <a href="contact.html"
+               class="nav-link">
+                Contact
+            </a>
+
+        </nav>
+
+
+
+        <!-- CART -->
+
+        <a href="cart.html"
+           class="cart-button">
+
+            <span class="cart-icon">
+                🛒
+            </span>
+
+            <span class="cart-text">
+                Cart
+            </span>
+
+            <span class="cart-count">
+                0
+            </span>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN CONTENT
+     
+     OFFERS CONTENT WILL BE ADDED HERE
+========================================================= -->
+
+<main>
+
+
+<!-- =========================================================
+     OFFERS PAGE HERO
+========================================================= -->
+
+<section class="offers-hero">
+
+    <div class="container offers-hero-container">
+
+        <span class="eyebrow">DEALS THAT MAKE YOUR BASKET GO FURTHER</span>
+
+        <h1>
+            Fresh Offers
+        </h1>
+
+        <p>
+            Weekly discounts, bundle deals, and promo codes on the
+            groceries you buy every day.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     DEAL OF THE DAY
+========================================================= -->
+
+<section class="section deal-of-day-section">
+
+    <div class="container">
+
+        <div class="deal-of-day">
+
+            <div class="deal-of-day-info">
+
+                <span class="deal-badge">DEAL OF THE DAY</span>
+
+                <h2>20% off all Fresh Fruit &amp; Vegetables</h2>
+
+                <p>Today only. Applies automatically at checkout on the whole Fruits &amp; Vegetables category, no minimum spend.</p>
+
+                <div class="deal-timer" id="deal-timer" aria-live="polite">
+                    <div class="deal-timer-unit">
+                        <span class="deal-timer-value" id="timer-hours">00</span>
+                        <span class="deal-timer-label">Hours</span>
+                    </div>
+                    <span class="deal-timer-colon">:</span>
+                    <div class="deal-timer-unit">
+                        <span class="deal-timer-value" id="timer-minutes">00</span>
+                        <span class="deal-timer-label">Minutes</span>
+                    </div>
+                    <span class="deal-timer-colon">:</span>
+                    <div class="deal-timer-unit">
+                        <span class="deal-timer-value" id="timer-seconds">00</span>
+                        <span class="deal-timer-label">Seconds</span>
+                    </div>
+                </div>
+
+                <p class="deal-timer-caption">Time left until this deal ends</p>
+
+            </div>
+
+            <div class="deal-of-day-code">
+
+                <span class="code-label">Use code</span>
+
+                <div class="promo-code-box">
+                    <span class="promo-code" id="deal-code">FRESH20</span>
+                    <button type="button" class="copy-btn" data-code="FRESH20">Copy</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     OFFERS GRID
+========================================================= -->
+
+<section class="section offers-section">
+
+    <div class="container">
+
+        <div class="offers-filter" role="tablist" aria-label="Filter offers by category">
+
+            <button type="button" class="offers-filter-btn active" data-filter="all">All Offers</button>
+            <button type="button" class="offers-filter-btn" data-filter="fruit-veg">Fruits &amp; Veg</button>
+            <button type="button" class="offers-filter-btn" data-filter="dairy">Dairy</button>
+            <button type="button" class="offers-filter-btn" data-filter="pantry">Pantry</button>
+            <button type="button" class="offers-filter-btn" data-filter="bundle">Bundles</button>
+
+        </div>
+
+        <div class="offers-grid" id="offers-grid">
+
+            <article class="offer-card" data-category="fruit-veg">
+                <span class="offer-badge">FRUITS &amp; VEG</span>
+                <h3>15% off Organic Vegetables</h3>
+                <p>Valid on all certified organic vegetables, while stocks last.</p>
+                <div class="offer-footer">
+                    <span class="offer-discount">15% OFF</span>
+                    <div class="promo-code-box small">
+                        <span class="promo-code" id="code-1">ORG15</span>
+                        <button type="button" class="copy-btn" data-code="ORG15">Copy</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="offer-card" data-category="dairy">
+                <span class="offer-badge">DAIRY</span>
+                <h3>Buy 2 Get 1 Free: Fresh Milk</h3>
+                <p>Mix and match any fresh milk, 1L or larger. Lowest-priced item is free.</p>
+                <div class="offer-footer">
+                    <span class="offer-discount">B2G1</span>
+                    <div class="promo-code-box small">
+                        <span class="promo-code" id="code-2">MILKB2G1</span>
+                        <button type="button" class="copy-btn" data-code="MILKB2G1">Copy</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="offer-card" data-category="pantry">
+                <span class="offer-badge">PANTRY</span>
+                <h3>RM10 off orders over RM60</h3>
+                <p>Applies to any pantry staples: rice, oats, canned goods, and more.</p>
+                <div class="offer-footer">
+                    <span class="offer-discount">RM10 OFF</span>
+                    <div class="promo-code-box small">
+                        <span class="promo-code" id="code-3">PANTRY10</span>
+                        <button type="button" class="copy-btn" data-code="PANTRY10">Copy</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="offer-card" data-category="bundle">
+                <span class="offer-badge">BUNDLE</span>
+                <h3>Weekly Essentials Bundle</h3>
+                <p>Bread, eggs, milk, and butter bundled together at a fixed discounted price.</p>
+                <div class="offer-footer">
+                    <span class="offer-discount">SAVE RM8</span>
+                    <div class="promo-code-box small">
+                        <span class="promo-code" id="code-4">ESSENTIALS8</span>
+                        <button type="button" class="copy-btn" data-code="ESSENTIALS8">Copy</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="offer-card" data-category="fruit-veg">
+                <span class="offer-badge">FRUITS &amp; VEG</span>
+                <h3>10% off Fresh Fruit Baskets</h3>
+                <p>Pre-packed fruit baskets, perfect for the whole week. Excludes single-item purchases.</p>
+                <div class="offer-footer">
+                    <span class="offer-discount">10% OFF</span>
+                    <div class="promo-code-box small">
+                        <span class="promo-code" id="code-5">FRUIT10</span>
+                        <button type="button" class="copy-btn" data-code="FRUIT10">Copy</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="offer-card" data-category="dairy">
+                <span class="offer-badge">DAIRY</span>
+                <h3>20% off Artisan Cheese</h3>
+                <p>Selected cheese counter items, this week only.</p>
+                <div class="offer-footer">
+                    <span class="offer-discount">20% OFF</span>
+                    <div class="promo-code-box small">
+                        <span class="promo-code" id="code-6">CHEESE20</span>
+                        <button type="button" class="copy-btn" data-code="CHEESE20">Copy</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="offer-card" data-category="pantry">
+                <span class="offer-badge">PANTRY</span>
+                <h3>Free delivery on rice &amp; grains</h3>
+                <p>No delivery fee on any order containing 5kg or more of rice or grains.</p>
+                <div class="offer-footer">
+                    <span class="offer-discount">FREE DELIVERY</span>
+                    <div class="promo-code-box small">
+                        <span class="promo-code" id="code-7">GRAINSFREE</span>
+                        <button type="button" class="copy-btn" data-code="GRAINSFREE">Copy</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="offer-card" data-category="bundle">
+                <span class="offer-badge">BUNDLE</span>
+                <h3>New Customer Starter Pack</h3>
+                <p>First order only: a curated bundle of everyday essentials at 25% off.</p>
+                <div class="offer-footer">
+                    <span class="offer-discount">25% OFF</span>
+                    <div class="promo-code-box small">
+                        <span class="promo-code" id="code-8">WELCOME25</span>
+                        <button type="button" class="copy-btn" data-code="WELCOME25">Copy</button>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <p id="offers-empty-message" class="offers-empty-message" hidden>
+            No offers in this category right now — try another filter.
+        </p>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+            <a href="index.html"
+               class="brand footer-logo">
+
+                <div class="brand-icon">
+                    F
+                </div>
+
+                <div class="brand-text">
+
+                    <span class="brand-name">
+                        FRESHO
+                    </span>
+
+                    <span class="brand-tagline">
+                        Fresh Groceries. Better Living.
+                    </span>
+
+                </div>
+
+            </a>
+
+            <p>
+                Making everyday grocery shopping
+                simpler, smarter and fresher.
+            </p>
+
+        </div>
+
+
+
+        <!-- SHOP -->
+
+        <div class="footer-column">
+
+            <h3>
+                Shop
+            </h3>
+
+            <a href="products.html">
+                All Products
+            </a>
+
+            <a href="products.html">
+                Vegetables
+            </a>
+
+            <a href="products.html">
+                Fruits
+            </a>
+
+            <a href="products.html">
+                Pantry
+            </a>
+
+        </div>
+
+
+
+        <!-- SMART TOOLS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Smart Tools
+            </h3>
+
+            <a href="planner.html">
+                Grocery Planner
+            </a>
+
+            <a href="calculator.html">
+                Grocery Calculator
+            </a>
+
+            <a href="tips.html">
+                Fresh Tips
+            </a>
+
+            <a href="offers.html">
+                Offers
+            </a>
+
+        </div>
+
+
+
+        <!-- COMPANY -->
+
+        <div class="footer-column">
+
+            <h3>
+                Company
+            </h3>
+
+            <a href="about.html">
+                About FRESHO
+            </a>
+
+            <a href="contact.html">
+                Contact Us
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="container footer-bottom">
+
+        <p>
+            © 2026 FRESHO. All rights reserved.
+        </p>
+
+        <p>
+            Fresh Groceries. Better Living.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     MOBILE MENU JAVASCRIPT
+========================================================= -->
+
+<script>
+
+    const menuButton =
+        document.querySelector(".mobile-menu-btn");
+
+    const navigation =
+        document.querySelector(".main-nav");
+
+
+    if (menuButton && navigation) {
+
+        menuButton.addEventListener("click", function () {
+
+            navigation.classList.toggle("nav-open");
+
+        });
+
+    }
+
+</script>
+
+
+<!-- =========================================================
+     OFFERS PAGE JAVASCRIPT
+========================================================= -->
+
+<script src="js/offers.js"></script>
+
+
+
+<!-- SHARED CART STORE - keeps the header cart
+     count correct on every page -->
+<script src="js/cart-store.js"></script>
+
+</body>
+
+</html>

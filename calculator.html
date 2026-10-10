@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f6b47'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='700' fill='white' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
+
+    <meta name="description" content="Add up a grocery list with FRESHO's calculator: subtotal, sales tax and final amount, updated as you type.">
+    <title>Grocery Calculator | FRESHO</title>
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <!-- CALCULATOR PAGE CSS -->
+    <link rel="stylesheet"
+          href="css/calculator.css">
+
+    <!-- CALCULATOR VALIDATION / ERROR STYLING -->
+    <link rel="stylesheet"
+          href="css/validation.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+          rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ANNOUNCEMENT BAR
+========================================================= -->
+
+<div class="announcement-bar">
+
+    <div class="container announcement-content">
+
+        <span>
+            Fresh groceries, made simple
+        </span>
+
+        <span class="announcement-right">
+            Free delivery on orders of RM80 and above
+        </span>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="site-header">
+
+    <div class="container nav-container">
+
+
+        <!-- LOGO -->
+
+        <a href="index.html"
+           class="brand">
+
+            <div class="brand-icon">
+                F
+            </div>
+
+            <div class="brand-text">
+
+                <span class="brand-name">
+                    FRESHO
+                </span>
+
+                <span class="brand-tagline">
+                    Fresh Groceries. Better Living.
+                </span>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- MOBILE MENU -->
+
+        <button class="mobile-menu-btn"
+                aria-label="Open navigation menu">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="main-nav">
+
+            <a href="index.html"
+               class="nav-link">
+                Home
+            </a>
+
+            <a href="products.html"
+               class="nav-link">
+                Products
+            </a>
+
+            <a href="planner.html"
+               class="nav-link">
+                Planner
+            </a>
+
+            <a href="calculator.html"
+               class="nav-link active">
+                Calculator
+            </a>
+
+            <a href="tips.html"
+               class="nav-link">
+                Fresh Tips
+            </a>
+
+            <a href="offers.html"
+               class="nav-link">
+                Offers
+            </a>
+
+            <a href="about.html"
+               class="nav-link">
+                About
+            </a>
+
+            <a href="contact.html"
+               class="nav-link">
+                Contact
+            </a>
+
+        </nav>
+
+
+
+        <!-- CART -->
+
+        <a href="cart.html"
+           class="cart-button">
+
+            <span class="cart-icon">
+                🛒
+            </span>
+
+            <span class="cart-text">
+                Cart
+            </span>
+
+            <span class="cart-count">
+                0
+            </span>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN CONTENT
+     
+     GROCERY CALCULATOR CONTENT WILL BE ADDED HERE
+========================================================= -->
+
+<main>
+
+
+<!-- =========================================================
+     CALCULATOR PAGE HERO
+========================================================= -->
+
+<section class="calc-hero">
+
+    <div class="container calc-hero-container">
+
+        <span class="eyebrow">SMART SHOPPING TOOL</span>
+
+        <h1>
+            Grocery List Calculator
+        </h1>
+
+        <p>
+            Add every item on your shopping list, set the sales tax
+            rate, and see your final grocery total update instantly.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CALCULATOR
+========================================================= -->
+
+<section class="section calculator-section">
+
+    <div class="container calculator-layout">
+
+        <!-- =====================================================
+             GROCERY FORM
+        ====================================================== -->
+
+        <div class="calculator-card">
+
+            <form id="grocery-form" novalidate>
+
+                <h2 class="calc-card-title">
+                    Your Grocery List
+                </h2>
+
+                <!-- =============================================
+                     CART BRIDGE
+                     Loads the shopping cart saved by the Products
+                     page so the list does not have to be retyped.
+                ============================================== -->
+                <div class="calc-cart-bar">
+
+                    <p id="cart-status" class="calc-cart-status">
+                        Checking your cart...
+                    </p>
+
+                    <button type="button"
+                            id="load-cart-btn"
+                            class="btn btn-cart">
+                        Load my cart items
+                    </button>
+
+                </div>
+
+                <!-- TABLE HEAD -->
+                <div class="calc-table">
+
+                    <div class="calc-table-head">
+                        <span>Item Name</span>
+                        <span>Price (RM)</span>
+                        <span>Qty</span>
+                        <span>Subtotal (RM)</span>
+                        <span class="calc-col-action" aria-hidden="true"></span>
+                    </div>
+
+                    <!-- ROWS ARE ADDED / REMOVED HERE BY JAVASCRIPT -->
+                    <div id="grocery-items" class="calc-table-body">
+
+                        <div class="grocery-row" data-row>
+
+                            <div class="calc-field">
+                                <input type="text"
+                                       class="item-name"
+                                       placeholder="e.g. Fresh Apples (1kg)"
+                                       aria-label="Item name">
+                            </div>
+
+                            <div class="calc-field">
+                                <input type="number"
+                                       class="item-price"
+                                       min="0.01"
+                                       step="0.01"
+                                       placeholder="0.00"
+                                       aria-label="Item price in Ringgit Malaysia">
+                            </div>
+
+                            <div class="calc-field">
+                                <input type="number"
+                                       class="item-qty"
+                                       min="1"
+                                       step="1"
+                                       value="1"
+                                       aria-label="Item quantity">
+                            </div>
+
+                            <span class="row-subtotal">RM 0.00</span>
+
+                            <button type="button"
+                                    class="remove-row-btn"
+                                    aria-label="Remove this item"
+                                    title="Remove item">
+                                &times;
+                            </button>
+
+                            <!-- PER-ROW ERROR MESSAGE -->
+                            <p class="row-error" role="alert" hidden></p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ADD ITEM -->
+                <button type="button"
+                        id="add-row-btn"
+                        class="btn btn-add">
+                    + Add Another Item
+                </button>
+
+                <!-- FORM-LEVEL ERROR MESSAGE (populated by calculator.js) -->
+                <div id="form-error"
+                     class="form-error"
+                     role="alert"
+                     aria-live="polite"
+                     hidden>
+                </div>
+
+                <!-- SALES TAX -->
+                <div class="calc-tax-row">
+
+                    <label for="tax-rate">
+                        Sales Tax Rate (%)
+                    </label>
+
+                    <input type="number"
+                           id="tax-rate"
+                           min="0.1"
+                           max="100"
+                           step="0.1"
+                           value="6"
+                           inputmode="decimal">
+
+                </div>
+
+                <!-- ACTIONS -->
+                <div class="calc-actions">
+
+                    <button type="submit" class="btn btn-primary">
+                        Calculate Final Total
+                        <span>→</span>
+                    </button>
+
+                    <button type="reset" id="reset-btn" class="btn btn-outline">
+                        Reset List
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+        <!-- =====================================================
+             LIVE SUMMARY
+        ====================================================== -->
+
+        <aside class="calc-summary" aria-live="polite">
+
+            <span class="eyebrow calc-summary-eyebrow">
+                ESTIMATED TOTAL
+            </span>
+
+            <h2>
+                Order Summary
+            </h2>
+
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <strong id="summary-subtotal">RM 0.00</strong>
+            </div>
+
+            <div class="summary-row">
+                <span id="summary-tax-label">Sales Tax (6%)</span>
+                <strong id="summary-tax">RM 0.00</strong>
+            </div>
+
+            <div class="summary-divider"></div>
+
+            <div class="summary-row summary-total">
+                <span>Final Amount</span>
+                <strong id="summary-total">RM 0.00</strong>
+            </div>
+
+            <p id="summary-status" class="summary-note">
+                Fill in your grocery items to see your total.
+            </p>
+
+        </aside>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+            <a href="index.html"
+               class="brand footer-logo">
+
+                <div class="brand-icon">
+                    F
+                </div>
+
+                <div class="brand-text">
+
+                    <span class="brand-name">
+                        FRESHO
+                    </span>
+
+                    <span class="brand-tagline">
+                        Fresh Groceries. Better Living.
+                    </span>
+
+                </div>
+
+            </a>
+
+            <p>
+                Making everyday grocery shopping
+                simpler, smarter and fresher.
+            </p>
+
+        </div>
+
+
+
+        <!-- SHOP -->
+
+        <div class="footer-column">
+
+            <h3>
+                Shop
+            </h3>
+
+            <a href="products.html">
+                All Products
+            </a>
+
+            <a href="products.html">
+                Vegetables
+            </a>
+
+            <a href="products.html">
+                Fruits
+            </a>
+
+            <a href="products.html">
+                Pantry
+            </a>
+
+        </div>
+
+
+
+        <!-- SMART TOOLS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Smart Tools
+            </h3>
+
+            <a href="planner.html">
+                Grocery Planner
+            </a>
+
+            <a href="calculator.html">
+                Grocery Calculator
+            </a>
+
+            <a href="tips.html">
+                Fresh Tips
+            </a>
+
+            <a href="offers.html">
+                Offers
+            </a>
+
+        </div>
+
+
+
+        <!-- COMPANY -->
+
+        <div class="footer-column">
+
+            <h3>
+                Company
+            </h3>
+
+            <a href="about.html">
+                About FRESHO
+            </a>
+
+            <a href="contact.html">
+                Contact Us
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="container footer-bottom">
+
+        <p>
+            © 2026 FRESHO. All rights reserved.
+        </p>
+
+        <p>
+            Fresh Groceries. Better Living.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     MOBILE MENU JAVASCRIPT
+========================================================= -->
+
+<script>
+
+    const menuButton =
+        document.querySelector(".mobile-menu-btn");
+
+    const navigation =
+        document.querySelector(".main-nav");
+
+
+    if (menuButton && navigation) {
+
+        menuButton.addEventListener("click", function () {
+
+            navigation.classList.toggle("nav-open");
+
+        });
+
+    }
+
+</script>
+
+
+<!-- =========================================================
+     GROCERY CALCULATOR JAVASCRIPT
+========================================================= -->
+
+<!-- SHARED CART STORE - must load before the page scripts -->
+<script src="js/cart-store.js"></script>
+
+<script src="js/calculator.js"></script>
+
+<!-- CALCULATOR VALIDATION / ERROR HANDLING -->
+<script src="js/validation.js"></script>
+
+
+
+</body>
+
+</html>

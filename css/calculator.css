@@ -1,0 +1,698 @@
+/* =========================================================
+   FRESHO - GROCERY CALCULATOR PAGE
+   Grocery calculator form, calculation, sales tax and final amount.
+
+   Uses the shared color/spacing variables defined in
+   css/style.css (--green-*, --border, --shadow-*, --radius-*).
+   css/validation.css extends the .row-invalid / .field-invalid /
+   .form-error rules with additional error-state styling.
+========================================================= */
+
+
+/* =========================================================
+   PAGE HERO
+========================================================= */
+
+.calc-hero {
+
+    padding: 70px 0 50px;
+
+    background: var(--green-light);
+
+    text-align: center;
+}
+
+.calc-hero-container {
+
+    max-width: 700px;
+
+    margin: 0 auto;
+}
+
+.calc-hero h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(32px, 4.5vw, 46px);
+
+    color: var(--green-950);
+
+    letter-spacing: -0.8px;
+
+    margin: 10px 0 14px;
+}
+
+.calc-hero p {
+
+    color: var(--text);
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+
+.calculator-section {
+
+    padding-top: 60px;
+}
+
+.calculator-layout {
+
+    display: grid;
+
+    grid-template-columns: 1fr 340px;
+
+    align-items: start;
+
+    gap: 30px;
+}
+
+@media (max-width: 860px) {
+
+    .calculator-layout {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   CALCULATOR CARD
+========================================================= */
+
+.calculator-card {
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow-sm);
+
+    padding: 32px;
+}
+
+.calc-card-title {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+
+    color: var(--green-950);
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   GROCERY ITEM TABLE
+========================================================= */
+
+.calc-table {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.calc-table-head {
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 0.7fr 1fr 34px;
+
+    gap: 10px;
+
+    padding: 0 4px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+
+    text-transform: uppercase;
+
+    color: var(--text-light);
+}
+
+.calc-table-body {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.grocery-row {
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 0.7fr 1fr 34px;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 8px;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-sm);
+
+    background: var(--green-soft);
+
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+/* Error state - extended in css/validation.css */
+.grocery-row.row-invalid {
+
+    border-color: #d64545;
+
+    background: #fdf1f1;
+}
+
+.calc-field input,
+.item-name,
+.item-price,
+.item-qty {
+
+    width: 100%;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    padding: 10px 12px;
+
+    font-size: 13px;
+
+    background: var(--white);
+
+    outline: none;
+
+    transition: border-color 0.2s ease;
+}
+
+.item-name:focus,
+.item-price:focus,
+.item-qty:focus,
+#tax-rate:focus {
+
+    border-color: var(--green-500);
+}
+
+.row-subtotal {
+
+    font-weight: 700;
+
+    font-size: 13px;
+
+    color: var(--green-800);
+
+    text-align: right;
+
+    padding-right: 4px;
+}
+
+.remove-row-btn {
+
+    width: 30px;
+
+    height: 30px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    color: var(--text-light);
+
+    font-size: 16px;
+
+    line-height: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.remove-row-btn:hover {
+
+    background: #fdf1f1;
+
+    border-color: #d64545;
+
+    color: #d64545;
+}
+
+@media (max-width: 640px) {
+
+    .calc-table-head {
+        display: none;
+    }
+
+    .grocery-row {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "name name"
+            "price qty"
+            "subtotal remove"
+            "error error";
+    }
+
+    .grocery-row .row-error { grid-area: error; }
+
+    .grocery-row .calc-field:nth-of-type(1) { grid-area: name; }
+    .grocery-row .calc-field:nth-of-type(2) { grid-area: price; }
+    .grocery-row .calc-field:nth-of-type(3) { grid-area: qty; }
+    .grocery-row .row-subtotal { grid-area: subtotal; text-align: left; }
+    .grocery-row .remove-row-btn { grid-area: remove; justify-self: end; }
+
+}
+
+
+/* =========================================================
+   ADD ITEM BUTTON
+========================================================= */
+
+.btn-add {
+
+    margin-top: 16px;
+
+    background: var(--green-light);
+
+    color: var(--green-800);
+
+    border: 1px dashed var(--green-500);
+
+    width: 100%;
+}
+
+.btn-add:hover {
+
+    background: var(--green-soft);
+}
+
+
+/* =========================================================
+   FORM ERROR MESSAGE
+========================================================= */
+
+.form-error {
+
+    margin-top: 16px;
+
+    padding: 12px 14px;
+
+    border-radius: 10px;
+
+    background: #fdf1f1;
+
+    border: 1px solid #f3c6c6;
+
+    color: #b42323;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.field-invalid {
+
+    border-color: #d64545 !important;
+}
+
+
+/* =========================================================
+   SALES TAX ROW
+========================================================= */
+
+.calc-tax-row {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 14px;
+
+    margin-top: 22px;
+
+    padding-top: 22px;
+
+    border-top: 1px dashed var(--border);
+}
+
+.calc-tax-row label {
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: var(--text-dark);
+}
+
+.calc-tax-row input {
+
+    width: 100px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    padding: 10px 12px;
+
+    font-size: 13px;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.calc-actions {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 24px;
+
+    flex-wrap: wrap;
+}
+
+.btn-outline {
+
+    background: var(--white);
+
+    color: var(--green-800);
+
+    border: 1px solid var(--border);
+}
+
+.btn-outline:hover {
+
+    background: var(--green-soft);
+}
+
+
+/* =========================================================
+   SUMMARY PANEL
+========================================================= */
+
+.calc-summary {
+
+    position: sticky;
+
+    top: 100px;
+
+    background: var(--green-950);
+
+    color: var(--white);
+
+    border-radius: var(--radius-md);
+
+    padding: 30px;
+
+    box-shadow: var(--shadow-md);
+}
+
+.calc-summary-eyebrow {
+
+    color: var(--green-400);
+
+    font-size: 12px;
+}
+
+.calc-summary h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+
+    margin: 8px 0 22px;
+}
+
+.summary-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-size: 13px;
+
+    padding: 10px 0;
+
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.summary-divider {
+
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    margin: 6px 0;
+}
+
+.summary-total {
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    color: var(--white);
+}
+
+.summary-total strong {
+
+    color: var(--green-400);
+
+    font-size: 20px;
+}
+
+.summary-note {
+
+    margin-top: 20px;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    color: rgba(255, 255, 255, 0.65);
+}
+
+
+/* =========================================================
+   MEMBER 3 - ERROR HANDLING, VALIDATION STYLES
+   AND THE CART BRIDGE PANEL
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   CART BRIDGE PANEL
+   Sits above the grocery table and offers to load the items
+   already saved in the shopping cart.
+--------------------------------------------------------- */
+
+.calc-cart-bar {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 22px;
+
+    padding: 14px 16px;
+
+    background: var(--green-light);
+
+    border: 1px solid var(--green-400);
+
+    border-radius: var(--radius-sm);
+}
+
+.calc-cart-status {
+
+    margin: 0;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: var(--green-900);
+
+    flex: 1 1 220px;
+}
+
+.btn-cart {
+
+    background: var(--green-700);
+
+    color: var(--white);
+
+    border: 1px solid var(--green-700);
+
+    white-space: nowrap;
+}
+
+.btn-cart:hover:not(:disabled) {
+
+    background: var(--green-800);
+
+    border-color: var(--green-800);
+}
+
+.btn-cart:disabled {
+
+    background: var(--white);
+
+    color: var(--text-light);
+
+    border-color: var(--border);
+
+    cursor: not-allowed;
+
+    opacity: 0.8;
+}
+
+
+/* ---------------------------------------------------------
+   PER-ROW ERROR MESSAGE
+   Spans the full width of the row so the message sits
+   directly under the field that caused it.
+--------------------------------------------------------- */
+
+.row-error {
+
+    grid-column: 1 / -1;
+
+    margin: 2px 4px 0;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    line-height: 1.5;
+
+    color: #b42323;
+}
+
+.row-error[hidden] {
+
+    display: none;
+}
+
+.row-error::before {
+
+    content: "!";
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 15px;
+
+    height: 15px;
+
+    margin-right: 7px;
+
+    border-radius: 50%;
+
+    background: #d64545;
+
+    color: var(--white);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    vertical-align: -2px;
+}
+
+
+/* ---------------------------------------------------------
+   INVALID FIELD STATE
+--------------------------------------------------------- */
+
+.field-invalid {
+
+    border-color: #d64545 !important;
+
+    background: #fff7f7 !important;
+}
+
+.field-invalid:focus {
+
+    outline: 2px solid #d64545;
+
+    outline-offset: 1px;
+}
+
+
+/* ---------------------------------------------------------
+   FORM-LEVEL ERROR SUMMARY
+--------------------------------------------------------- */
+
+.form-error[hidden] {
+
+    display: none;
+}
+
+
+/* ---------------------------------------------------------
+   VISIBLE KEYBOARD FOCUS
+   Every control in the calculator can be reached and seen
+   by keyboard users.
+--------------------------------------------------------- */
+
+.calculator-card input:focus-visible,
+.calculator-card button:focus-visible {
+
+    outline: 2px solid var(--green-600);
+
+    outline-offset: 2px;
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+--------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .grocery-row,
+    .calc-field input,
+    .btn-cart {
+
+        transition: none;
+    }
+
+}

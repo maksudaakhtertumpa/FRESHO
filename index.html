@@ -1,0 +1,1879 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f6b47'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='700' fill='white' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
+
+    <title>FRESHO | Fresh Groceries. Better Living.</title>
+
+    <meta name="description"
+          content="FRESHO is a modern grocery shopping website for fresh groceries, smart shopping and better everyday living.">
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- MAIN CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ANNOUNCEMENT BAR
+========================================================= -->
+
+<div class="announcement-bar">
+
+    <div class="container announcement-content">
+
+        <span>
+            Fresh groceries, made simple
+        </span>
+
+        <span class="announcement-right">
+            Free delivery on orders of RM80 and above
+        </span>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="site-header">
+
+    <div class="container nav-container">
+
+
+        <!-- LOGO -->
+
+        <a href="index.html" class="brand">
+
+            <div class="brand-icon">
+                F
+            </div>
+
+            <div class="brand-text">
+
+                <span class="brand-name">
+                    FRESHO
+                </span>
+
+                <span class="brand-tagline">
+                    Fresh Groceries. Better Living.
+                </span>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- MOBILE MENU -->
+
+        <button class="mobile-menu-btn"
+                aria-label="Open navigation menu">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="main-nav">
+
+            <a href="index.html"
+               class="nav-link active">
+                Home
+            </a>
+
+            <a href="products.html"
+               class="nav-link">
+                Products
+            </a>
+
+            <a href="planner.html"
+               class="nav-link">
+                Planner
+            </a>
+
+            <a href="calculator.html"
+               class="nav-link">
+                Calculator
+            </a>
+
+            <a href="tips.html"
+               class="nav-link">
+                Fresh Tips
+            </a>
+
+            <a href="offers.html"
+               class="nav-link">
+                Offers
+            </a>
+
+            <a href="about.html"
+               class="nav-link">
+                About
+            </a>
+
+            <a href="contact.html"
+               class="nav-link">
+                Contact
+            </a>
+
+        </nav>
+
+
+
+        <!-- CART -->
+
+        <a href="cart.html"
+           class="cart-button">
+
+            <span class="cart-icon">
+                🛒
+            </span>
+
+            <span class="cart-text">
+                Cart
+            </span>
+
+            <span class="cart-count"
+                  id="headerCartCount">
+                0
+            </span>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+
+
+<!-- =========================================================
+     HERO SECTION
+========================================================= -->
+
+<section class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-container">
+
+        <div class="hero-content">
+
+
+            <div class="hero-badge">
+
+                <span class="badge-dot"></span>
+
+                FRESHNESS YOU CAN TRUST
+
+            </div>
+
+
+
+            <h1>
+
+                Fresh groceries,
+                <span>better living.</span>
+
+            </h1>
+
+
+
+            <p>
+
+                Discover quality fruits, vegetables,
+                dairy, meat, pantry essentials and
+                everyday groceries, carefully selected
+                for your home.
+
+            </p>
+
+
+
+            <div class="hero-buttons">
+
+                <a href="products.html"
+                   class="btn btn-primary">
+
+                    Shop Groceries
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+                <a href="planner.html"
+                   class="btn btn-light">
+
+                    Plan My Shopping
+
+                </a>
+
+            </div>
+
+
+
+            <!-- TRUST POINTS -->
+
+            <div class="hero-trust">
+
+
+                <div class="trust-item">
+
+                    <strong>
+                        RM80
+                    </strong>
+
+                    <span>
+                        Free delivery from
+                    </span>
+
+                </div>
+
+
+                <div class="trust-divider"></div>
+
+
+                <div class="trust-item">
+
+                    <strong>
+                        16
+                    </strong>
+
+                    <span>
+                        Fresh products
+                    </span>
+
+                </div>
+
+
+                <div class="trust-divider"></div>
+
+
+                <div class="trust-item">
+
+                    <strong>
+                        6% SST
+                    </strong>
+
+                    <span>
+                        Shown before checkout
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CATEGORY SECTION
+========================================================= -->
+
+<section class="section categories-section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="eyebrow">
+                    SHOP SMART
+                </span>
+
+                <h2>
+                    Shop by category
+                </h2>
+
+            </div>
+
+
+            <a href="products.html"
+               class="view-all">
+
+                View all products →
+
+            </a>
+
+        </div>
+
+
+
+        <div class="category-grid">
+
+
+            <!-- VEGETABLES -->
+
+            <a href="products.html"
+               class="category-card">
+
+                <div class="category-image vegetables">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=85"
+                        alt="Fresh vegetables">
+
+                </div>
+
+
+                <div class="category-info">
+
+                    <h3>
+                        Vegetables
+                    </h3>
+
+                    <span>
+                        Fresh greens & more →
+                    </span>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- FRUITS -->
+
+            <a href="products.html"
+               class="category-card">
+
+                <div class="category-image fruits">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=800&q=85"
+                        alt="Fresh fruits">
+
+                </div>
+
+
+                <div class="category-info">
+
+                    <h3>
+                        Fruits
+                    </h3>
+
+                    <span>
+                        Sweet & nutritious →
+                    </span>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- DAIRY & EGGS -->
+
+            <a href="products.html"
+               class="category-card">
+
+                <div class="category-image dairy">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=800&q=85"
+                        alt="Milk and dairy products">
+
+                </div>
+
+
+                <div class="category-info">
+
+                    <h3>
+                        Dairy & Eggs
+                    </h3>
+
+                    <span>
+                        Fresh everyday essentials →
+                    </span>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- MEAT & PROTEIN -->
+
+            <a href="products.html"
+               class="category-card">
+
+                <div class="category-image protein">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=800&q=85"
+                        alt="Fresh chicken">
+
+                </div>
+
+
+                <div class="category-info">
+
+                    <h3>
+                        Meat & Protein
+                    </h3>
+
+                    <span>
+                        Quality protein →
+                    </span>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FRESH TODAY
+========================================================= -->
+
+<section class="section featured-section">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="eyebrow">
+                    FRESH TODAY
+                </span>
+
+                <h2>
+                    Fresh picks for you
+                </h2>
+
+            </div>
+
+
+            <a href="products.html"
+               class="view-all">
+
+                Shop everything →
+
+            </a>
+
+        </div>
+
+
+
+        <div class="product-grid picks-grid">
+
+
+
+            <!-- =================================================
+                 PRODUCT 1
+            ================================================= -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <span class="product-badge">
+                        Fresh
+                    </span>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?auto=format&fit=crop&w=700&q=85"
+                        alt="Fresh vegetables">
+
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Vegetables
+                    </span>
+
+                    <h3>
+                        Fresh Vegetable Mix
+                    </h3>
+
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            RM 8.90
+                        </strong>
+
+                        <span>
+                            / pack
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        class="add-to-cart-btn"
+                        data-name="Fresh Vegetable Mix"
+                        data-price="8.90"
+                        data-category="Vegetables"
+                        data-image="https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?auto=format&fit=crop&w=700&q=85">
+
+                        Add to Cart
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PRODUCT 2
+            ================================================= -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <span class="product-badge organic">
+                        Natural
+                    </span>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=700&q=85"
+                        alt="Seasonal fresh fruits">
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Fruits
+                    </span>
+
+                    <h3>
+                        Seasonal Fruit Box
+                    </h3>
+
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            RM 18.90
+                        </strong>
+
+                        <span>
+                            / box
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        class="add-to-cart-btn"
+                        data-name="Seasonal Fruit Box"
+                        data-price="18.90"
+                        data-category="Fruits"
+                        data-image="https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=700&q=85">
+
+                        Add to Cart
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PRODUCT 3
+            ================================================= -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <span class="product-badge">
+                        Popular
+                    </span>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1518569656558-1f25e69d93d7?auto=format&fit=crop&w=700&q=85"
+                        alt="Farm fresh eggs">
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Dairy & Eggs
+                    </span>
+
+                    <h3>
+                        Farm Fresh Eggs
+                    </h3>
+
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            RM 12.50
+                        </strong>
+
+                        <span>
+                            / tray
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        class="add-to-cart-btn"
+                        data-name="Farm Fresh Eggs"
+                        data-price="12.50"
+                        data-category="Dairy & Eggs"
+                        data-image="https://images.unsplash.com/photo-1518569656558-1f25e69d93d7?auto=format&fit=crop&w=700&q=85">
+
+                        Add to Cart
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PRODUCT 4
+            ================================================= -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <span class="product-badge">
+                        Daily Pick
+                    </span>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=700&q=85"
+                        alt="Fresh chicken">
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Meat & Protein
+                    </span>
+
+                    <h3>
+                        Fresh Chicken
+                    </h3>
+
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            RM 15.90
+                        </strong>
+
+                        <span>
+                            / kg
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        class="add-to-cart-btn"
+                        data-name="Fresh Chicken"
+                        data-price="15.90"
+                        data-category="Meat & Protein"
+                        data-image="https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=700&q=85">
+
+                        Add to Cart
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PRODUCT 5
+            ================================================= -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <span class="product-badge">
+                        Fresh
+                    </span>
+
+                    <img
+    src="https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?auto=format&fit=crop&w=900&q=90"
+    alt="Fresh green broccoli"
+>
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Vegetables
+                    </span>
+
+                    <h3>
+                        Fresh Broccoli
+                    </h3>
+
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            RM 6.50
+                        </strong>
+
+                        <span>
+                            / piece
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        class="add-to-cart-btn"
+                        data-name="Fresh Broccoli"
+                        data-price="6.50"
+                        data-category="Vegetables"
+                        data-image="https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?auto=format&fit=crop&w=900&q=90">
+
+                        Add to Cart
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PRODUCT 6
+            ================================================= -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <span class="product-badge organic">
+                        Natural
+                    </span>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=700&q=85"
+                        alt="Fresh red apples">
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <span class="product-category">
+                        Fruits
+                    </span>
+
+                    <h3>
+                        Fresh Red Apples
+                    </h3>
+
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            RM 8.50
+                        </strong>
+
+                        <span>
+                            / kg
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        class="add-to-cart-btn"
+                        data-name="Fresh Red Apples"
+                        data-price="8.50"
+                        data-category="Fruits"
+                        data-image="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=700&q=85">
+
+                        Add to Cart
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     WHY FRESHO
+========================================================= -->
+
+<section class="why-section">
+
+    <div class="container why-container">
+
+
+        <!-- IMAGE -->
+
+        <div class="why-image">
+
+          <img
+        src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=85"
+        alt="Fresh produce on display in a grocery store"
+    >
+
+            <div class="floating-card">
+
+                <span class="floating-icon">
+                    ✓
+                </span>
+
+                <div>
+
+                    <strong>
+                        Freshness checked
+                    </strong>
+
+                    <small>
+                        Every shopping day
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CONTENT -->
+
+        <div class="why-content">
+
+            <span class="eyebrow">
+                WHY FRESHO?
+            </span>
+
+
+            <h2>
+
+                Groceries that fit
+                <span>your lifestyle.</span>
+
+            </h2>
+
+
+            <p>
+
+                FRESHO makes everyday grocery shopping
+                simpler, smarter and more enjoyable.
+                From fresh produce to pantry essentials,
+                we help you shop with confidence.
+
+            </p>
+
+
+
+            <div class="benefits">
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        🌱
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Fresh Selection
+                        </h3>
+
+                        <p>
+                            Carefully selected products
+                            for your everyday needs.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        🧺
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Smart Shopping
+                        </h3>
+
+                        <p>
+                            Plan your groceries and
+                            stay within your budget.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        💚
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Better Everyday Living
+                        </h3>
+
+                        <p>
+                            Simple grocery choices for
+                            a better everyday lifestyle.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CALCULATOR CTA
+========================================================= -->
+
+<section class="calculator-cta">
+
+    <div class="container">
+
+        <div class="calculator-box">
+
+
+            <div class="calculator-content">
+
+                <span class="eyebrow light-eyebrow">
+                    SHOP WITH CONFIDENCE
+                </span>
+
+
+                <h2>
+                    Know your grocery total
+                    before checkout.
+                </h2>
+
+
+                <p>
+
+                    Your estimated shopping total
+                    updates automatically based on
+                    the products currently in your cart.
+
+                </p>
+
+
+                <a href="calculator.html"
+                   class="btn btn-white">
+
+                    Open Grocery Calculator
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 AUTO CART TOTAL
+            ================================================= -->
+
+            <div class="calculator-visual">
+
+                <div class="calculator-circle">
+
+                    <span>
+                        RM
+                    </span>
+
+
+                    <strong id="homeCartTotal">
+                        0.00
+                    </strong>
+
+
+                    <small>
+                        Current cart total
+                    </small>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     OFFER BANNER
+========================================================= -->
+
+<section class="section offer-section">
+
+    <div class="container">
+
+        <div class="offer-banner">
+
+
+            <div class="offer-content">
+
+                <span class="offer-label">
+                    FRESHO SPECIAL
+                </span>
+
+
+                <h2>
+                    Make your weekly
+                    shopping easier.
+                </h2>
+
+
+                <p>
+
+                    Build a shopping plan,
+                    discover fresh picks and
+                    keep track of your grocery budget.
+
+                </p>
+
+
+                <a href="planner.html"
+                   class="btn btn-primary">
+
+                    Start Planning
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <div class="offer-decoration">
+
+                <div class="fruit-circle fruit-one">
+                    🍊
+                </div>
+
+                <div class="fruit-circle fruit-two">
+                    🥦
+                </div>
+
+                <div class="fruit-circle fruit-three">
+                    🍎
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     NEWSLETTER
+========================================================= -->
+
+<section class="newsletter-section">
+
+    <div class="container newsletter-container">
+
+
+        <div>
+
+            <span class="eyebrow">
+                STAY FRESH
+            </span>
+
+
+            <h2>
+                Get fresh ideas in your inbox.
+            </h2>
+
+
+            <p>
+                Grocery tips, seasonal picks and special offers.
+            </p>
+
+        </div>
+
+
+
+        <form class="newsletter-form"
+              id="newsletterForm">
+
+            <input
+                type="email"
+                id="newsletterEmail"
+                placeholder="Enter your email address"
+                aria-label="Email address"
+                required>
+
+
+            <button type="submit">
+                Subscribe
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+            <a href="index.html"
+               class="brand footer-logo">
+
+                <div class="brand-icon">
+                    F
+                </div>
+
+
+                <div class="brand-text">
+
+                    <span class="brand-name">
+                        FRESHO
+                    </span>
+
+                    <span class="brand-tagline">
+                        Fresh Groceries. Better Living.
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <p>
+                Making everyday grocery shopping
+                simpler, smarter and fresher.
+            </p>
+
+        </div>
+
+
+
+        <!-- SHOP -->
+
+        <div class="footer-column">
+
+            <h3>
+                Shop
+            </h3>
+
+            <a href="products.html">
+                All Products
+            </a>
+
+            <a href="products.html">
+                Vegetables
+            </a>
+
+            <a href="products.html">
+                Fruits
+            </a>
+
+            <a href="products.html">
+                Dairy & Eggs
+            </a>
+
+            <a href="products.html">
+                Meat & Protein
+            </a>
+
+        </div>
+
+
+
+        <!-- TOOLS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Smart Tools
+            </h3>
+
+            <a href="planner.html">
+                Grocery Planner
+            </a>
+
+            <a href="calculator.html">
+                Grocery Calculator
+            </a>
+
+            <a href="tips.html">
+                Fresh Tips
+            </a>
+
+            <a href="offers.html">
+                Offers
+            </a>
+
+        </div>
+
+
+
+        <!-- COMPANY -->
+
+        <div class="footer-column">
+
+            <h3>
+                Company
+            </h3>
+
+            <a href="about.html">
+                About FRESHO
+            </a>
+
+            <a href="contact.html">
+                Contact Us
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="container footer-bottom">
+
+        <p>
+            © 2026 FRESHO. All rights reserved.
+        </p>
+
+        <p>
+            Fresh Groceries. Better Living.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
+
+    const cartCount =
+        document.getElementById("headerCartCount");
+
+    const homeCartTotal =
+        document.getElementById("homeCartTotal");
+
+
+
+    /* =====================================================
+       CONSTANTS
+    ===================================================== */
+
+    const SALES_TAX_RATE = 0.06;
+
+    const FREE_DELIVERY_LIMIT = 80;
+
+    const STANDARD_DELIVERY = 5;
+
+
+
+    /* =====================================================
+       LOAD CART
+    ===================================================== */
+
+    function getCart() {
+        // The shared cart store (js/cart-store.js) checks every saved item,
+        // so all pages agree on what is in the cart.
+        if (window.FreshoCart) {
+            return window.FreshoCart.read();
+        }
+
+
+        try {
+
+            const savedCart =
+                localStorage.getItem("freshoCart");
+
+            if (!savedCart) {
+
+                return [];
+
+            }
+
+
+            const cart =
+                JSON.parse(savedCart);
+
+
+            if (!Array.isArray(cart)) {
+
+                return [];
+
+            }
+
+
+            return cart;
+
+        }
+
+        catch (error) {
+
+            console.error(
+                "Unable to load cart:",
+                error
+            );
+
+            return [];
+
+        }
+
+    }
+
+
+
+    /* =====================================================
+       SAVE CART
+    ===================================================== */
+
+    function saveCart(cart) {
+        if (window.FreshoCart) {
+            return window.FreshoCart.write(cart);
+        }
+
+
+        try {
+
+            localStorage.setItem(
+                "freshoCart",
+                JSON.stringify(cart)
+            );
+
+            return true;
+
+        }
+
+        catch (error) {
+
+            console.error(
+                "Unable to save cart:",
+                error
+            );
+
+            alert(
+                "Unable to save your cart. Please try again."
+            );
+
+            return false;
+
+        }
+
+    }
+
+
+
+    /* =====================================================
+       UPDATE CART COUNT
+    ===================================================== */
+
+    function updateCartCount() {
+
+        const cart =
+            getCart();
+
+
+        let totalQuantity = 0;
+
+
+        cart.forEach(function (item) {
+
+            const quantity =
+                Number(item.quantity) || 0;
+
+            totalQuantity += quantity;
+
+        });
+
+
+        cartCount.textContent =
+            totalQuantity;
+
+    }
+
+
+
+    /* =====================================================
+       UPDATE HOME CART TOTAL
+    ===================================================== */
+
+    function updateHomeCartTotal() {
+
+        const cart =
+            getCart();
+
+
+        let subtotal = 0;
+
+
+        cart.forEach(function (item) {
+
+            const price =
+                Number(item.price) || 0;
+
+            const quantity =
+                Number(item.quantity) || 0;
+
+
+            subtotal +=
+                price * quantity;
+
+        });
+
+
+
+        /* SALES TAX */
+
+        const salesTax =
+            subtotal * SALES_TAX_RATE;
+
+
+
+        /* DELIVERY */
+
+        let deliveryFee = 0;
+
+
+        if (
+            subtotal > 0 &&
+            subtotal < FREE_DELIVERY_LIMIT
+        ) {
+
+            deliveryFee =
+                STANDARD_DELIVERY;
+
+        }
+
+
+
+        /* FINAL TOTAL */
+
+        const total =
+            subtotal +
+            salesTax +
+            deliveryFee;
+
+
+
+        homeCartTotal.textContent =
+            total.toFixed(2);
+
+    }
+
+
+
+    /* =====================================================
+       ADD PRODUCT TO CART
+    ===================================================== */
+
+    const addButtons =
+        document.querySelectorAll(
+            ".add-to-cart-btn"
+        );
+
+
+    addButtons.forEach(function (button) {
+
+
+        button.addEventListener(
+            "click",
+            function () {
+
+
+                const name =
+                    button.dataset.name;
+
+                const price =
+                    Number(button.dataset.price);
+
+                const category =
+                    button.dataset.category;
+
+                const image =
+                    button.dataset.image;
+
+
+
+                /* VALIDATION */
+
+                if (
+                    !name ||
+                    Number.isNaN(price) ||
+                    price <= 0
+                ) {
+
+                    alert(
+                        "Sorry, this product cannot be added to the cart."
+                    );
+
+                    return;
+
+                }
+
+
+
+                /* GET EXISTING CART */
+
+                const cart =
+                    getCart();
+
+
+
+                /* CHECK IF PRODUCT EXISTS */
+
+                const existingProduct =
+                    cart.find(function (item) {
+
+                        return item.name === name;
+
+                    });
+
+
+
+                if (existingProduct) {
+
+                    if (
+                        Number(existingProduct.quantity) < 99
+                    ) {
+
+                        existingProduct.quantity++;
+
+                    }
+                    else {
+
+                        alert(
+                            "Maximum quantity for this product is 99."
+                        );
+
+                        return;
+
+                    }
+
+                }
+
+                else {
+
+                    cart.push({
+
+                        name: name,
+
+                        price: price,
+
+                        quantity: 1,
+
+                        category: category,
+
+                        image: image
+
+                    });
+
+                }
+
+
+
+                /* SAVE */
+
+                if (saveCart(cart)) {
+
+
+                    /* UPDATE */
+
+                    updateCartCount();
+
+                    updateHomeCartTotal();
+
+
+
+                    /* BUTTON FEEDBACK */
+
+                    const originalText =
+                        button.textContent;
+
+
+                    button.textContent =
+                        "✓ Added to Cart";
+
+
+                    button.disabled =
+                        true;
+
+
+
+                    setTimeout(function () {
+
+                        button.textContent =
+                            originalText;
+
+                        button.disabled =
+                            false;
+
+                    }, 1200);
+
+
+                }
+
+            }
+        );
+
+    });
+
+
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    const menuButton =
+        document.querySelector(
+            ".mobile-menu-btn"
+        );
+
+
+    const navigation =
+        document.querySelector(
+            ".main-nav"
+        );
+
+
+    if (
+        menuButton &&
+        navigation
+    ) {
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+
+                navigation.classList.toggle(
+                    "nav-open"
+                );
+
+            }
+        );
+
+    }
+
+
+
+    /* =====================================================
+       NEWSLETTER
+    ===================================================== */
+
+    const newsletterForm =
+        document.getElementById(
+            "newsletterForm"
+        );
+
+
+    if (newsletterForm) {
+
+        newsletterForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                const email =
+                    document.getElementById(
+                        "newsletterEmail"
+                    ).value.trim();
+
+
+                if (!email) {
+
+                    alert(
+                        "Please enter your email address."
+                    );
+
+                    return;
+
+                }
+
+
+                alert(
+                    "Thank you for subscribing to FRESHO!"
+                );
+
+
+                newsletterForm.reset();
+
+            }
+        );
+
+    }
+
+
+
+    /* =====================================================
+       INITIAL UPDATE
+    ===================================================== */
+
+    updateCartCount();
+
+    updateHomeCartTotal();
+
+
+});
+
+</script>
+
+
+
+
+<!-- SHARED CART STORE - keeps the header cart
+     count correct on every page -->
+<script src="js/cart-store.js"></script>
+
+</body>
+
+</html>

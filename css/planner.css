@@ -1,0 +1,277 @@
+/* =========================================================
+   FRESHO - GROCERY PLANNER PAGE
+========================================================= */
+
+.planner-hero {
+    padding: 70px 0 50px;
+    background: var(--green-light);
+    text-align: center;
+}
+
+.planner-hero-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.planner-hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(32px, 4.5vw, 46px);
+    color: var(--green-950);
+    letter-spacing: -0.8px;
+    margin: 10px 0 14px;
+}
+
+.planner-hero p {
+    color: var(--text);
+    font-size: 15px;
+}
+
+.planner-section {
+    padding-top: 60px;
+}
+
+.planner-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    align-items: start;
+    gap: 30px;
+}
+
+@media (max-width: 860px) {
+    .planner-layout { grid-template-columns: 1fr; }
+}
+
+/* ---- Card ---- */
+
+.planner-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    padding: 32px;
+}
+
+/* ---- Day tabs ---- */
+
+.planner-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 22px;
+}
+
+.planner-tab {
+    flex: 1 1 auto;
+    min-width: 44px;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--green-soft);
+    color: var(--text-dark);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.planner-tab:hover {
+    border-color: var(--green-500);
+}
+
+.planner-tab.active {
+    background: var(--green-800);
+    border-color: var(--green-800);
+    color: var(--white);
+}
+
+.planner-day-title {
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    color: var(--green-950);
+    margin-bottom: 18px;
+}
+
+/* ---- Add item form ---- */
+
+.planner-add-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.planner-add-form input {
+    flex: 1;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.15s ease;
+}
+
+.planner-add-form input:focus {
+    border-color: var(--green-500);
+}
+
+.planner-error {
+    margin: 6px 0 14px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: #fdf1f1;
+    border: 1px solid #f3c6c6;
+    color: #b42323;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* ---- List ---- */
+
+.planner-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.planner-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--green-soft);
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.planner-item.done {
+    background: var(--white);
+    border-color: var(--border);
+}
+
+.planner-item-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+.planner-item-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--green-600);
+    cursor: pointer;
+}
+
+.planner-item.done .planner-item-label span {
+    text-decoration: line-through;
+    color: var(--text-light);
+}
+
+.planner-remove-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--white);
+    color: var(--text-light);
+    font-size: 15px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.planner-remove-btn:hover {
+    background: #fdf1f1;
+    border-color: #d64545;
+    color: #d64545;
+}
+
+.planner-empty {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 13px;
+    padding: 18px 0;
+}
+
+/* ---- Summary panel ---- */
+
+.planner-summary {
+    position: sticky;
+    top: 100px;
+    background: var(--green-950);
+    color: var(--white);
+    border-radius: var(--radius-md);
+    padding: 30px;
+    box-shadow: var(--shadow-md);
+}
+
+.planner-summary-eyebrow {
+    color: var(--green-400);
+    font-size: 12px;
+}
+
+.planner-summary h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    margin: 8px 0 20px;
+}
+
+.planner-week-breakdown {
+    list-style: none;
+    margin: 0 0 16px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.planner-week-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    padding: 8px 0;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.planner-week-row.current {
+    color: var(--white);
+    font-weight: 700;
+}
+
+.planner-summary-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 6px 0 14px;
+}
+
+.planner-summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    padding: 8px 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.planner-summary-total strong {
+    color: var(--green-400);
+    font-size: 18px;
+}
+
+.planner-clear-btn {
+    width: 100%;
+    margin-top: 18px;
+    background: transparent;
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.planner-clear-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}

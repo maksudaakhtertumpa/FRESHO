@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f6b47'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='700' fill='white' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
+
+    <meta name="description" content="Review the items in your FRESHO cart, change quantities and see your total with tax and delivery.">
+    <title>Shopping Cart | FRESHO</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Cart CSS -->
+    <link rel="stylesheet" href="css/cart.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ANNOUNCEMENT BAR
+========================================================= -->
+
+<div class="announcement-bar">
+
+    <div class="container announcement-content">
+
+        <span>
+            Fresh groceries, made simple
+        </span>
+
+        <span class="announcement-right">
+            Free delivery on orders of RM80 and above
+        </span>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="site-header">
+
+    <div class="container nav-container">
+
+
+        <!-- LOGO -->
+
+        <a href="index.html" class="brand">
+
+            <div class="brand-icon">
+                F
+            </div>
+
+            <div class="brand-text">
+
+                <span class="brand-name">
+                    FRESHO
+                </span>
+
+                <span class="brand-tagline">
+                    Fresh Groceries. Better Living.
+                </span>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- MOBILE MENU -->
+
+        <button class="mobile-menu-btn"
+                aria-label="Open navigation menu">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="main-nav">
+
+            <a href="index.html" class="nav-link">
+                Home
+            </a>
+
+            <a href="products.html" class="nav-link">
+                Products
+            </a>
+
+            <a href="planner.html" class="nav-link">
+                Planner
+            </a>
+
+            <a href="calculator.html" class="nav-link">
+                Calculator
+            </a>
+
+            <a href="tips.html" class="nav-link">
+                Fresh Tips
+            </a>
+
+            <a href="offers.html" class="nav-link">
+                Offers
+            </a>
+
+            <a href="about.html" class="nav-link">
+                About
+            </a>
+
+            <a href="contact.html" class="nav-link">
+                Contact
+            </a>
+
+        </nav>
+
+
+
+        <!-- CART -->
+
+        <a href="cart.html" class="cart-button">
+
+            <span class="cart-icon">
+                🛒
+            </span>
+
+            <span class="cart-text">
+                Cart
+            </span>
+
+            <span class="cart-count" id="headerCartCount">
+                0
+            </span>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     CART MAIN CONTENT
+========================================================= -->
+
+<main class="cart-page">
+
+
+    <!-- =====================================================
+         CART HERO
+    ===================================================== -->
+
+    <section class="cart-hero">
+
+        <div class="container">
+
+            <span class="cart-kicker">
+                YOUR SHOPPING BAG
+            </span>
+
+            <h1>
+                Your <span>Cart</span>
+            </h1>
+
+            <p>
+                Review your selected groceries before
+                moving to checkout.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CART CONTENT
+    ===================================================== -->
+
+    <section class="cart-section">
+
+        <div class="container cart-layout">
+
+
+            <!-- =================================================
+                 LEFT: CART ITEMS
+            ================================================= -->
+
+            <div class="cart-items-area">
+
+                <div class="cart-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            SHOPPING CART
+                        </span>
+
+                        <h2>
+                            Your selected items
+                        </h2>
+
+                    </div>
+
+                    <span id="itemCount">
+                        0 items
+                    </span>
+
+                </div>
+
+
+
+                <!-- ERROR MESSAGE -->
+
+                <div id="cartError"
+                     class="cart-error"
+                     role="alert">
+
+                </div>
+
+
+
+                <!-- CART ITEMS -->
+
+                <div id="cartItems"
+                     class="cart-items">
+
+                    <!-- JavaScript will add products here -->
+
+                </div>
+
+
+
+                <!-- EMPTY CART -->
+
+                <div id="emptyCart"
+                     class="empty-cart"
+                     style="display:none;">
+
+                    <div class="empty-cart-icon">
+                        🛒
+                    </div>
+
+                    <h3>
+                        Your cart is empty
+                    </h3>
+
+                    <p>
+                        You have not added any groceries yet.
+                        Start shopping and fill your basket with fresh essentials.
+                    </p>
+
+                    <a href="products.html"
+                       class="shop-button">
+
+                        Browse Products
+                        <span>→</span>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- CONTINUE SHOPPING -->
+
+                <div class="continue-shopping">
+
+                    <a href="products.html">
+                        ← Continue Shopping
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 RIGHT: ORDER SUMMARY
+            ================================================= -->
+
+            <aside class="cart-summary">
+
+                <div class="summary-card">
+
+                    <span class="section-label">
+                        ORDER SUMMARY
+                    </span>
+
+                    <h2>
+                        Your total
+                    </h2>
+
+
+
+                    <!-- SUBTOTAL -->
+
+                    <div class="summary-row">
+
+                        <span>
+                            Subtotal
+                        </span>
+
+                        <strong id="subtotal">
+                            RM 0.00
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- SALES TAX -->
+
+                    <div class="summary-row">
+
+                        <span>
+                            Sales Tax (6%)
+                        </span>
+
+                        <strong id="salesTax">
+                            RM 0.00
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- DELIVERY -->
+
+                    <div class="summary-row">
+
+                        <span>
+                            Delivery
+                        </span>
+
+                        <strong id="deliveryFee">
+                            RM 0.00
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="free-delivery-note"
+                         id="deliveryNote">
+
+                        Free delivery on orders of RM80 and above
+
+                    </div>
+
+
+
+                    <div class="summary-divider"></div>
+
+
+
+                    <!-- FINAL TOTAL -->
+
+                    <div class="summary-total">
+
+                        <span>
+                            Total
+                        </span>
+
+                        <strong id="grandTotal">
+                            RM 0.00
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- CHECKOUT -->
+
+                    <button type="button"
+                            id="checkoutButton"
+                            class="checkout-button">
+
+                        Proceed to Checkout
+                        <span>→</span>
+
+                    </button>
+
+
+
+                    <!-- SECURITY -->
+
+                    <div class="secure-checkout">
+
+                        <span>
+                            🔒
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Secure Checkout
+                            </strong>
+
+                            <small>
+                                Your shopping information is protected.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+            <a href="index.html"
+               class="brand footer-logo">
+
+                <div class="brand-icon">
+                    F
+                </div>
+
+                <div class="brand-text">
+
+                    <span class="brand-name">
+                        FRESHO
+                    </span>
+
+                    <span class="brand-tagline">
+                        Fresh Groceries. Better Living.
+                    </span>
+
+                </div>
+
+            </a>
+
+            <p>
+                Making everyday grocery shopping
+                simpler, smarter and fresher.
+            </p>
+
+        </div>
+
+
+
+        <!-- SHOP -->
+
+        <div class="footer-column">
+
+            <h3>
+                Shop
+            </h3>
+
+            <a href="products.html">
+                All Products
+            </a>
+
+            <a href="products.html">
+                Vegetables
+            </a>
+
+            <a href="products.html">
+                Fruits
+            </a>
+
+            <a href="products.html">
+                Pantry
+            </a>
+
+        </div>
+
+
+
+        <!-- TOOLS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Smart Tools
+            </h3>
+
+            <a href="planner.html">
+                Grocery Planner
+            </a>
+
+            <a href="calculator.html">
+                Grocery Calculator
+            </a>
+
+            <a href="tips.html">
+                Fresh Tips
+            </a>
+
+            <a href="offers.html">
+                Offers
+            </a>
+
+        </div>
+
+
+
+        <!-- COMPANY -->
+
+        <div class="footer-column">
+
+            <h3>
+                Company
+            </h3>
+
+            <a href="about.html">
+                About FRESHO
+            </a>
+
+            <a href="contact.html">
+                Contact Us
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="container footer-bottom">
+
+        <p>
+            © 2026 FRESHO. All rights reserved.
+        </p>
+
+        <p>
+            Fresh Groceries. Better Living.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     CART JAVASCRIPT
+========================================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* =====================================================
+       DOM ELEMENTS
+    ===================================================== */
+
+    const cartItemsContainer =
+        document.getElementById("cartItems");
+
+    const emptyCart =
+        document.getElementById("emptyCart");
+
+    const cartError =
+        document.getElementById("cartError");
+
+    const subtotalElement =
+        document.getElementById("subtotal");
+
+    const salesTaxElement =
+        document.getElementById("salesTax");
+
+    const deliveryElement =
+        document.getElementById("deliveryFee");
+
+    const grandTotalElement =
+        document.getElementById("grandTotal");
+
+    const itemCountElement =
+        document.getElementById("itemCount");
+
+    const headerCartCount =
+        document.getElementById("headerCartCount");
+
+    const checkoutButton =
+        document.getElementById("checkoutButton");
+
+
+
+    /* =====================================================
+       SALES TAX
+    ===================================================== */
+
+    const SALES_TAX_RATE = 0.06;
+
+    const FREE_DELIVERY_LIMIT = 80;
+
+    const STANDARD_DELIVERY = 5;
+
+
+
+    /* =====================================================
+       LOAD CART
+    ===================================================== */
+
+    let cart = [];
+
+    // The shared cart store (js/cart-store.js) checks every saved item,
+    // so all pages agree on what is in the cart.
+    if (window.FreshoCart) {
+
+        cart = window.FreshoCart.read();
+
+    } else try {
+
+        const savedCart =
+            localStorage.getItem("freshoCart");
+
+        if (savedCart) {
+
+            cart = JSON.parse(savedCart);
+
+        }
+
+        if (!Array.isArray(cart)) {
+
+            cart = [];
+
+        }
+
+    } catch (error) {
+
+        showError(
+            "Unable to load your cart. Please refresh the page."
+        );
+
+        cart = [];
+
+    }
+
+
+
+    /* =====================================================
+       DISPLAY ERROR
+    ===================================================== */
+
+    function showError(message) {
+
+        cartError.textContent = message;
+
+        cartError.style.display = "block";
+
+    }
+
+
+
+    /* =====================================================
+       CLEAR ERROR
+    ===================================================== */
+
+    function clearError() {
+
+        cartError.textContent = "";
+
+        cartError.style.display = "none";
+
+    }
+
+
+
+    /* =====================================================
+       SAVE CART
+    ===================================================== */
+
+    function saveCart() {
+        if (window.FreshoCart) {
+            if (!window.FreshoCart.write(cart) && window.FreshoCart.isPersistent) {
+                showError("Your cart could not be saved.");
+            }
+            return;
+        }
+
+
+        try {
+
+            localStorage.setItem(
+                "freshoCart",
+                JSON.stringify(cart)
+            );
+
+        } catch (error) {
+
+            showError(
+                "Your cart could not be saved."
+            );
+
+        }
+
+    }
+
+
+
+    /* =====================================================
+       FORMAT MONEY
+    ===================================================== */
+
+    function formatMoney(amount) {
+
+        return "RM " + Number(amount).toFixed(2);
+
+    }
+
+
+
+    /* =====================================================
+       RENDER CART
+    ===================================================== */
+
+    function renderCart() {
+
+        clearError();
+
+        cartItemsContainer.innerHTML = "";
+
+
+
+        /* EMPTY CART */
+
+        if (cart.length === 0) {
+
+            emptyCart.style.display = "block";
+
+            cartItemsContainer.style.display = "none";
+
+            itemCountElement.textContent =
+                "0 items";
+
+            updateSummary();
+
+            return;
+
+        }
+
+
+
+        emptyCart.style.display = "none";
+
+        cartItemsContainer.style.display = "block";
+
+
+
+        let totalItems = 0;
+
+
+
+        cart.forEach(function (item, index) {
+
+
+            /* Validate item */
+
+            if (
+                !item.name ||
+                typeof item.price !== "number" ||
+                item.price < 0
+            ) {
+
+                return;
+
+            }
+
+
+            const quantity =
+                Number(item.quantity) || 1;
+
+            totalItems += quantity;
+
+
+
+            /* CART CARD */
+
+            const cartCard =
+                document.createElement("article");
+
+            cartCard.className =
+                "cart-item";
+
+
+
+            /* PRODUCT IMAGE */
+
+            const imageBox =
+                document.createElement("div");
+
+            imageBox.className =
+                "cart-item-image";
+
+
+
+            if (item.image) {
+
+                const image =
+                    document.createElement("img");
+
+                image.src = item.image;
+
+                image.alt =
+                    item.name;
+
+                imageBox.appendChild(image);
+
+            } else {
+
+                imageBox.textContent =
+                    item.emoji || "🥬";
+
+            }
+
+
+
+            /* PRODUCT INFORMATION */
+
+            const productInfo =
+                document.createElement("div");
+
+            productInfo.className =
+                "cart-item-info";
+
+
+
+            const category =
+                document.createElement("span");
+
+            category.className =
+                "cart-item-category";
+
+            category.textContent =
+                item.category || "GROCERY";
+
+
+
+            const productName =
+                document.createElement("h3");
+
+            productName.textContent =
+                item.name;
+
+
+
+            const productPrice =
+                document.createElement("p");
+
+            productPrice.className =
+                "cart-item-price";
+
+            productPrice.textContent =
+                formatMoney(item.price);
+
+
+
+            productInfo.appendChild(category);
+
+            productInfo.appendChild(productName);
+
+            productInfo.appendChild(productPrice);
+
+
+
+            /* QUANTITY */
+
+            const quantityBox =
+                document.createElement("div");
+
+            quantityBox.className =
+                "quantity-box";
+
+
+
+            const decreaseButton =
+                document.createElement("button");
+
+            decreaseButton.type =
+                "button";
+
+            decreaseButton.textContent =
+                "−";
+
+            decreaseButton.setAttribute(
+                "aria-label",
+                "Decrease quantity"
+            );
+
+
+
+            const quantityDisplay =
+                document.createElement("span");
+
+            quantityDisplay.textContent =
+                quantity;
+
+
+
+            const increaseButton =
+                document.createElement("button");
+
+            increaseButton.type =
+                "button";
+
+            increaseButton.textContent =
+                "+";
+
+            increaseButton.setAttribute(
+                "aria-label",
+                "Increase quantity"
+            );
+
+
+
+            decreaseButton.addEventListener(
+                "click",
+                function () {
+
+                    if (cart[index].quantity > 1) {
+
+                        cart[index].quantity--;
+
+                        saveCart();
+
+                        renderCart();
+
+                    }
+
+                }
+            );
+
+
+
+            increaseButton.addEventListener(
+                "click",
+                function () {
+
+                    if (cart[index].quantity < 99) {
+
+                        cart[index].quantity++;
+
+                        saveCart();
+
+                        renderCart();
+
+                    } else {
+
+                        showError(
+                            "Maximum quantity is 99."
+                        );
+
+                    }
+
+                }
+            );
+
+
+
+            quantityBox.appendChild(
+                decreaseButton
+            );
+
+            quantityBox.appendChild(
+                quantityDisplay
+            );
+
+            quantityBox.appendChild(
+                increaseButton
+            );
+
+
+
+            /* ITEM TOTAL */
+
+            const itemTotal =
+                document.createElement("strong");
+
+            itemTotal.className =
+                "cart-item-total";
+
+            itemTotal.textContent =
+                formatMoney(
+                    item.price * quantity
+                );
+
+
+
+            /* REMOVE BUTTON */
+
+            const removeButton =
+                document.createElement("button");
+
+            removeButton.type =
+                "button";
+
+            removeButton.className =
+                "remove-item";
+
+            removeButton.textContent =
+                "Remove";
+
+
+
+            removeButton.addEventListener(
+                "click",
+                function () {
+
+                    cart.splice(index, 1);
+
+                    saveCart();
+
+                    renderCart();
+
+                }
+            );
+
+
+
+            /* ACTION AREA */
+
+            const itemActions =
+                document.createElement("div");
+
+            itemActions.className =
+                "cart-item-actions";
+
+
+
+            itemActions.appendChild(
+                quantityBox
+            );
+
+            itemActions.appendChild(
+                itemTotal
+            );
+
+            itemActions.appendChild(
+                removeButton
+            );
+
+
+
+            /* COMPLETE CARD */
+
+            cartCard.appendChild(
+                imageBox
+            );
+
+            cartCard.appendChild(
+                productInfo
+            );
+
+            cartCard.appendChild(
+                itemActions
+            );
+
+
+
+            cartItemsContainer.appendChild(
+                cartCard
+            );
+
+        });
+
+
+
+        itemCountElement.textContent =
+            totalItems +
+            (totalItems === 1 ? " item" : " items");
+
+
+
+        headerCartCount.textContent =
+            totalItems;
+
+
+
+        updateSummary();
+
+    }
+
+
+
+    /* =====================================================
+       UPDATE ORDER SUMMARY
+    ===================================================== */
+
+    function updateSummary() {
+
+        let subtotal = 0;
+
+        let totalItems = 0;
+
+
+
+        cart.forEach(function (item) {
+
+            const quantity =
+                Number(item.quantity) || 1;
+
+            const price =
+                Number(item.price) || 0;
+
+            subtotal +=
+                price * quantity;
+
+            totalItems +=
+                quantity;
+
+        });
+
+
+
+        /* SALES TAX */
+
+        const salesTax =
+            subtotal * SALES_TAX_RATE;
+
+
+
+        /* DELIVERY */
+
+        let deliveryFee = 0;
+
+
+
+        if (
+            subtotal > 0 &&
+            subtotal < FREE_DELIVERY_LIMIT
+        ) {
+
+            deliveryFee =
+                STANDARD_DELIVERY;
+
+        }
+
+
+
+        /* FINAL TOTAL */
+
+        const grandTotal =
+            subtotal +
+            salesTax +
+            deliveryFee;
+
+
+
+        /* UPDATE DOM */
+
+        subtotalElement.textContent =
+            formatMoney(subtotal);
+
+        salesTaxElement.textContent =
+            formatMoney(salesTax);
+
+        deliveryElement.textContent =
+            deliveryFee === 0
+                ? "FREE"
+                : formatMoney(deliveryFee);
+
+        grandTotalElement.textContent =
+            formatMoney(grandTotal);
+
+
+
+        itemCountElement.textContent =
+            totalItems +
+            (totalItems === 1 ? " item" : " items");
+
+
+
+        headerCartCount.textContent =
+            totalItems;
+
+
+
+        /* DELIVERY MESSAGE */
+
+        const deliveryNote =
+            document.getElementById(
+                "deliveryNote"
+            );
+
+
+
+        if (subtotal === 0) {
+
+            deliveryNote.textContent =
+                "Add products to your cart.";
+
+        }
+
+        else if (subtotal >= FREE_DELIVERY_LIMIT) {
+
+            deliveryNote.textContent =
+                "✓ You qualify for free delivery!";
+
+        }
+
+        else {
+
+            const remaining =
+                FREE_DELIVERY_LIMIT - subtotal;
+
+            deliveryNote.textContent =
+                "Add " +
+                formatMoney(remaining) +
+                " more for free delivery.";
+
+        }
+
+    }
+
+
+
+    /* =====================================================
+       CHECKOUT
+    ===================================================== */
+
+    checkoutButton.addEventListener(
+        "click",
+        function () {
+
+            clearError();
+
+
+
+            if (cart.length === 0) {
+
+                showError(
+                    "Your cart is empty. Please add some groceries before checkout."
+                );
+
+                return;
+
+            }
+
+
+
+            window.location.href =
+                "checkout.html";
+
+        }
+    );
+
+
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    const menuButton =
+        document.querySelector(
+            ".mobile-menu-btn"
+        );
+
+    const navigation =
+        document.querySelector(
+            ".main-nav"
+        );
+
+
+
+    if (
+        menuButton &&
+        navigation
+    ) {
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+
+                navigation.classList.toggle(
+                    "nav-open"
+                );
+
+            }
+        );
+
+    }
+
+
+
+    /* =====================================================
+       INITIAL DISPLAY
+    ===================================================== */
+
+    renderCart();
+
+});
+
+</script>
+
+
+
+<!-- SHARED CART STORE - keeps the header cart
+     count correct on every page -->
+<script src="js/cart-store.js"></script>
+
+</body>
+
+</html>

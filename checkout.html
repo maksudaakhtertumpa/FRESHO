@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f6b47'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='700' fill='white' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
+
+    <meta name="description" content="Enter your delivery details and place your FRESHO grocery order.">
+    <title>Checkout | FRESHO</title>
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <!-- CHECKOUT PAGE CSS -->
+    <link rel="stylesheet"
+          href="css/checkout.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+          rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ANNOUNCEMENT BAR
+========================================================= -->
+
+<div class="announcement-bar">
+
+    <div class="container announcement-content">
+
+        <span>
+            Fresh groceries, made simple
+        </span>
+
+        <span class="announcement-right">
+            Free delivery on orders of RM80 and above
+        </span>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="site-header">
+
+    <div class="container nav-container">
+
+
+        <!-- LOGO -->
+
+        <a href="index.html" class="brand">
+
+            <div class="brand-icon">
+                F
+            </div>
+
+            <div class="brand-text">
+
+                <span class="brand-name">
+                    FRESHO
+                </span>
+
+                <span class="brand-tagline">
+                    Fresh Groceries. Better Living.
+                </span>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- MOBILE MENU -->
+
+        <button class="mobile-menu-btn"
+                aria-label="Open navigation menu">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="main-nav">
+
+            <a href="index.html" class="nav-link">
+                Home
+            </a>
+
+            <a href="products.html" class="nav-link">
+                Products
+            </a>
+
+            <a href="planner.html" class="nav-link">
+                Planner
+            </a>
+
+            <a href="calculator.html" class="nav-link">
+                Calculator
+            </a>
+
+            <a href="tips.html" class="nav-link">
+                Fresh Tips
+            </a>
+
+            <a href="offers.html" class="nav-link">
+                Offers
+            </a>
+
+            <a href="about.html" class="nav-link">
+                About
+            </a>
+
+            <a href="contact.html" class="nav-link">
+                Contact
+            </a>
+
+        </nav>
+
+
+
+        <!-- CART -->
+
+        <a href="cart.html" class="cart-button">
+
+            <span class="cart-icon">
+                🛒
+            </span>
+
+            <span class="cart-text">
+                Cart
+            </span>
+
+            <span class="cart-count" id="headerCartCount">
+                0
+            </span>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     CHECKOUT MAIN CONTENT
+========================================================= -->
+
+<main>
+
+
+<!-- =========================================================
+     CHECKOUT HERO
+========================================================= -->
+
+<section class="checkout-hero">
+
+    <div class="container">
+
+        <span class="eyebrow">ALMOST THERE</span>
+
+        <h1>Checkout</h1>
+
+        <p>Confirm your details and delivery address to place your order.</p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     EMPTY CART STATE
+     (shown instead of the form when there is nothing to check out)
+========================================================= -->
+
+<section class="section" id="checkout-empty-state" hidden>
+
+    <div class="container checkout-empty">
+
+        <span class="checkout-empty-icon">🛒</span>
+
+        <h2>Your cart is empty</h2>
+
+        <p>Add a few groceries before heading to checkout.</p>
+
+        <a href="products.html" class="btn btn-primary">Browse Products</a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ORDER PLACED CONFIRMATION
+     (shown after a successful order submission)
+========================================================= -->
+
+<section class="section" id="checkout-success-state" hidden>
+
+    <div class="container checkout-success">
+
+        <span class="checkout-success-icon">✅</span>
+
+        <h2>Order placed!</h2>
+
+        <p id="checkout-success-message">Thank you - your groceries are on the way.</p>
+
+        <a href="index.html" class="btn btn-primary">Back to Home</a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CHECKOUT FORM + ORDER SUMMARY
+========================================================= -->
+
+<section class="section checkout-section" id="checkout-form-section">
+
+    <div class="container checkout-layout">
+
+        <!-- =====================================================
+             DELIVERY + PAYMENT FORM
+        ====================================================== -->
+
+        <div class="checkout-card">
+
+            <form id="checkout-form" novalidate>
+
+                <h2 class="checkout-card-title">Delivery Details</h2>
+
+                <div class="checkout-field">
+                    <label for="checkout-name">Full Name</label>
+                    <input type="text" id="checkout-name" name="name" placeholder="e.g. Aiman Hakim" required maxlength="80">
+                    <small class="field-error" id="error-name"></small>
+                </div>
+
+                <div class="checkout-row">
+
+                    <div class="checkout-field">
+                        <label for="checkout-phone">Phone Number</label>
+                        <input type="tel" id="checkout-phone" name="phone" placeholder="e.g. 012-3456789" required maxlength="20">
+                        <small class="field-error" id="error-phone"></small>
+                    </div>
+
+                    <div class="checkout-field">
+                        <label for="checkout-email">Email Address</label>
+                        <input type="email" id="checkout-email" name="email" placeholder="e.g. you@example.com" required maxlength="120">
+                        <small class="field-error" id="error-email"></small>
+                    </div>
+
+                </div>
+
+                <div class="checkout-field">
+                    <label for="checkout-address">Delivery Address</label>
+                    <textarea id="checkout-address" name="address" rows="3" placeholder="Unit number, street, city, postcode" required maxlength="300"></textarea>
+                    <small class="field-error" id="error-address"></small>
+                </div>
+
+                <h2 class="checkout-card-title checkout-payment-title">Payment Method</h2>
+
+                <div class="payment-options" role="radiogroup" aria-label="Payment method">
+
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="cod" checked>
+                        <span class="payment-option-label">
+                            <strong>Cash on Delivery</strong>
+                            <small>Pay when your groceries arrive</small>
+                        </span>
+                    </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="card">
+                        <span class="payment-option-label">
+                            <strong>Credit / Debit Card</strong>
+                            <small>Visa, Mastercard</small>
+                        </span>
+                    </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="online-banking">
+                        <span class="payment-option-label">
+                            <strong>Online Banking</strong>
+                            <small>FPX</small>
+                        </span>
+                    </label>
+
+                </div>
+
+                <p id="checkout-form-error" class="checkout-form-error" role="alert" hidden></p>
+
+                <button type="submit" class="btn btn-primary checkout-submit-btn">
+                    Place Order
+                    <span>→</span>
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- =====================================================
+             ORDER SUMMARY
+        ====================================================== -->
+
+        <aside class="checkout-summary">
+
+            <span class="eyebrow checkout-summary-eyebrow">ORDER SUMMARY</span>
+
+            <h2>Your Items</h2>
+
+            <ul class="checkout-item-list" id="checkout-item-list">
+                <!-- Filled in by checkout.js from the saved cart -->
+            </ul>
+
+            <div class="checkout-summary-divider"></div>
+
+            <div class="checkout-summary-row">
+                <span>Subtotal</span>
+                <strong id="checkout-subtotal">RM 0.00</strong>
+            </div>
+
+            <div class="checkout-summary-row">
+                <span>Sales Tax (6%)</span>
+                <strong id="checkout-tax">RM 0.00</strong>
+            </div>
+
+            <div class="checkout-summary-row">
+                <span>Delivery</span>
+                <strong id="checkout-delivery">RM 0.00</strong>
+            </div>
+
+            <div class="checkout-summary-divider"></div>
+
+            <div class="checkout-summary-row checkout-summary-total">
+                <span>Total</span>
+                <strong id="checkout-total">RM 0.00</strong>
+            </div>
+
+        </aside>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+            <a href="index.html" class="brand footer-logo">
+
+                <div class="brand-icon">
+                    F
+                </div>
+
+                <div class="brand-text">
+
+                    <span class="brand-name">
+                        FRESHO
+                    </span>
+
+                    <span class="brand-tagline">
+                        Fresh Groceries. Better Living.
+                    </span>
+
+                </div>
+
+            </a>
+
+            <p>
+                Making everyday grocery shopping
+                simpler, smarter and fresher.
+            </p>
+
+        </div>
+
+
+
+        <!-- SHOP -->
+
+        <div class="footer-column">
+
+            <h3>Shop</h3>
+
+            <a href="products.html">All Products</a>
+            <a href="products.html">Vegetables</a>
+            <a href="products.html">Fruits</a>
+            <a href="products.html">Pantry</a>
+
+        </div>
+
+
+
+        <!-- SMART TOOLS -->
+
+        <div class="footer-column">
+
+            <h3>Smart Tools</h3>
+
+            <a href="planner.html">Grocery Planner</a>
+            <a href="calculator.html">Grocery Calculator</a>
+            <a href="tips.html">Fresh Tips</a>
+            <a href="offers.html">Offers</a>
+
+        </div>
+
+
+
+        <!-- COMPANY -->
+
+        <div class="footer-column">
+
+            <h3>Company</h3>
+
+            <a href="about.html">About FRESHO</a>
+            <a href="contact.html">Contact Us</a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="container footer-bottom">
+
+        <p>© 2026 FRESHO. All rights reserved.</p>
+
+        <p>Fresh Groceries. Better Living.</p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     MOBILE MENU JAVASCRIPT
+========================================================= -->
+
+<script>
+
+    const menuButton =
+        document.querySelector(".mobile-menu-btn");
+
+    const navigation =
+        document.querySelector(".main-nav");
+
+
+    if (menuButton && navigation) {
+
+        menuButton.addEventListener("click", function () {
+
+            navigation.classList.toggle("nav-open");
+
+        });
+
+    }
+
+</script>
+
+
+<!-- =========================================================
+     CHECKOUT PAGE JAVASCRIPT
+========================================================= -->
+
+<script src="js/checkout.js"></script>
+
+
+
+<!-- SHARED CART STORE - keeps the header cart
+     count correct on every page -->
+<script src="js/cart-store.js"></script>
+
+</body>
+
+</html>

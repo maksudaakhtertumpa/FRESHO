@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f6b47'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='700' fill='white' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
+
+    <meta name="description" content="Plan your groceries for each day of the week with the FRESHO weekly planner.">
+    <title>Planner | FRESHO</title>
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <!-- PLANNER PAGE CSS -->
+    <link rel="stylesheet"
+          href="css/planner.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+          rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ANNOUNCEMENT BAR
+========================================================= -->
+
+<div class="announcement-bar">
+
+    <div class="container announcement-content">
+
+        <span>
+            Fresh groceries, made simple
+        </span>
+
+        <span class="announcement-right">
+            Free delivery on orders of RM80 and above
+        </span>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="site-header">
+
+    <div class="container nav-container">
+
+
+        <!-- LOGO -->
+
+        <a href="index.html"
+           class="brand">
+
+            <div class="brand-icon">
+                F
+            </div>
+
+            <div class="brand-text">
+
+                <span class="brand-name">
+                    FRESHO
+                </span>
+
+                <span class="brand-tagline">
+                    Fresh Groceries. Better Living.
+                </span>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- MOBILE MENU -->
+
+        <button class="mobile-menu-btn"
+                aria-label="Open navigation menu">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="main-nav">
+
+            <a href="index.html"
+               class="nav-link">
+                Home
+            </a>
+
+            <a href="products.html"
+               class="nav-link">
+                Products
+            </a>
+
+            <a href="planner.html"
+               class="nav-link active">
+                Planner
+            </a>
+
+            <a href="calculator.html"
+               class="nav-link">
+                Calculator
+            </a>
+
+            <a href="tips.html"
+               class="nav-link">
+                Fresh Tips
+            </a>
+
+            <a href="offers.html"
+               class="nav-link">
+                Offers
+            </a>
+
+            <a href="about.html"
+               class="nav-link">
+                About
+            </a>
+
+            <a href="contact.html"
+               class="nav-link">
+                Contact
+            </a>
+
+        </nav>
+
+
+
+        <!-- CART -->
+
+        <a href="cart.html"
+           class="cart-button">
+
+            <span class="cart-icon">
+                🛒
+            </span>
+
+            <span class="cart-text">
+                Cart
+            </span>
+
+            <span class="cart-count">
+                0
+            </span>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN CONTENT
+     
+     PLANNER CONTENT WILL BE ADDED HERE
+========================================================= -->
+
+<main>
+
+
+<!-- =========================================================
+     PLANNER PAGE HERO
+========================================================= -->
+
+<section class="planner-hero">
+
+    <div class="container planner-hero-container">
+
+        <span class="eyebrow">PLAN AHEAD, SHOP ONCE</span>
+
+        <h1>
+            Weekly Grocery Planner
+        </h1>
+
+        <p>
+            Plan what you need to buy for each day of the week, tick
+            items off as you shop, and never forget an ingredient
+            again.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PLANNER
+========================================================= -->
+
+<section class="section planner-section">
+
+    <div class="container planner-layout">
+
+        <!-- =====================================================
+             DAY TABS + LIST
+        ====================================================== -->
+
+        <div class="planner-card">
+
+            <div class="planner-tabs" role="tablist" aria-label="Choose a day">
+
+                <button type="button" class="planner-tab active" data-day="mon" role="tab" aria-selected="true">Mon</button>
+                <button type="button" class="planner-tab" data-day="tue" role="tab" aria-selected="false">Tue</button>
+                <button type="button" class="planner-tab" data-day="wed" role="tab" aria-selected="false">Wed</button>
+                <button type="button" class="planner-tab" data-day="thu" role="tab" aria-selected="false">Thu</button>
+                <button type="button" class="planner-tab" data-day="fri" role="tab" aria-selected="false">Fri</button>
+                <button type="button" class="planner-tab" data-day="sat" role="tab" aria-selected="false">Sat</button>
+                <button type="button" class="planner-tab" data-day="sun" role="tab" aria-selected="false">Sun</button>
+
+            </div>
+
+            <h2 class="planner-day-title" id="planner-day-title">
+                Monday
+            </h2>
+
+            <form id="planner-form" class="planner-add-form">
+
+                <input type="text"
+                       id="planner-item-input"
+                       placeholder="e.g. Fresh spinach"
+                       aria-label="New grocery item for this day"
+                       required
+                       maxlength="60">
+
+                <button type="submit" class="btn btn-primary">
+                    + Add
+                </button>
+
+            </form>
+
+            <p id="planner-error" class="planner-error" role="alert" hidden></p>
+
+            <ul id="planner-list" class="planner-list">
+                <!-- Items for the selected day are rendered here by planner.js -->
+            </ul>
+
+            <p id="planner-empty" class="planner-empty">
+                Nothing planned for this day yet. Add your first item above.
+            </p>
+
+        </div>
+
+
+        <!-- =====================================================
+             WEEK SUMMARY
+        ====================================================== -->
+
+        <aside class="planner-summary">
+
+            <span class="eyebrow planner-summary-eyebrow">THIS WEEK</span>
+
+            <h2>Week Overview</h2>
+
+            <ul class="planner-week-breakdown" id="planner-week-breakdown">
+                <!-- One row per day, filled in by planner.js -->
+            </ul>
+
+            <div class="planner-summary-divider"></div>
+
+            <div class="planner-summary-row planner-summary-total">
+                <span>Total items planned</span>
+                <strong id="planner-total-count">0</strong>
+            </div>
+
+            <div class="planner-summary-row">
+                <span>Checked off</span>
+                <strong id="planner-checked-count">0</strong>
+            </div>
+
+            <button type="button" id="planner-clear-week-btn" class="btn btn-outline planner-clear-btn">
+                Clear Whole Week
+            </button>
+
+        </aside>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+            <a href="index.html"
+               class="brand footer-logo">
+
+                <div class="brand-icon">
+                    F
+                </div>
+
+                <div class="brand-text">
+
+                    <span class="brand-name">
+                        FRESHO
+                    </span>
+
+                    <span class="brand-tagline">
+                        Fresh Groceries. Better Living.
+                    </span>
+
+                </div>
+
+            </a>
+
+            <p>
+                Making everyday grocery shopping
+                simpler, smarter and fresher.
+            </p>
+
+        </div>
+
+
+
+        <!-- SHOP -->
+
+        <div class="footer-column">
+
+            <h3>
+                Shop
+            </h3>
+
+            <a href="products.html">
+                All Products
+            </a>
+
+            <a href="products.html">
+                Vegetables
+            </a>
+
+            <a href="products.html">
+                Fruits
+            </a>
+
+            <a href="products.html">
+                Pantry
+            </a>
+
+        </div>
+
+
+
+        <!-- SMART TOOLS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Smart Tools
+            </h3>
+
+            <a href="planner.html">
+                Grocery Planner
+            </a>
+
+            <a href="calculator.html">
+                Grocery Calculator
+            </a>
+
+            <a href="tips.html">
+                Fresh Tips
+            </a>
+
+            <a href="offers.html">
+                Offers
+            </a>
+
+        </div>
+
+
+
+        <!-- COMPANY -->
+
+        <div class="footer-column">
+
+            <h3>
+                Company
+            </h3>
+
+            <a href="about.html">
+                About FRESHO
+            </a>
+
+            <a href="contact.html">
+                Contact Us
+            </a>
+
+        </div>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="container footer-bottom">
+
+        <p>
+            © 2026 FRESHO. All rights reserved.
+        </p>
+
+        <p>
+            Fresh Groceries. Better Living.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     MOBILE MENU JAVASCRIPT
+========================================================= -->
+
+<script>
+
+    const menuButton =
+        document.querySelector(".mobile-menu-btn");
+
+    const navigation =
+        document.querySelector(".main-nav");
+
+
+    if (menuButton && navigation) {
+
+        menuButton.addEventListener("click", function () {
+
+            navigation.classList.toggle("nav-open");
+
+        });
+
+    }
+
+</script>
+
+
+<!-- =========================================================
+     GROCERY PLANNER JAVASCRIPT
+========================================================= -->
+
+<script src="js/planner.js"></script>
+
+
+
+<!-- SHARED CART STORE - keeps the header cart
+     count correct on every page -->
+<script src="js/cart-store.js"></script>
+
+</body>
+
+</html>

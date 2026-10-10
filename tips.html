@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f6b47'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='700' fill='white' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
+
+    <meta name="description" content="Practical tips from FRESHO for choosing, storing and keeping groceries fresh for longer.">
+    <title>Fresh Tips | FRESHO</title>
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <!-- FRESH TIPS PAGE CSS -->
+    <link rel="stylesheet"
+          href="css/tips.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+          rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ANNOUNCEMENT BAR
+========================================================= -->
+
+<div class="announcement-bar">
+
+    <div class="container announcement-content">
+
+        <span>
+            Fresh groceries, made simple
+        </span>
+
+        <span class="announcement-right">
+            Free delivery on orders of RM80 and above
+        </span>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="site-header">
+
+    <div class="container nav-container">
+
+
+        <!-- LOGO -->
+
+        <a href="index.html"
+           class="brand">
+
+            <div class="brand-icon">
+                F
+            </div>
+
+            <div class="brand-text">
+
+                <span class="brand-name">
+                    FRESHO
+                </span>
+
+                <span class="brand-tagline">
+                    Fresh Groceries. Better Living.
+                </span>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- MOBILE MENU -->
+
+        <button class="mobile-menu-btn"
+                aria-label="Open navigation menu">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="main-nav">
+
+            <a href="index.html"
+               class="nav-link">
+                Home
+            </a>
+
+            <a href="products.html"
+               class="nav-link">
+                Products
+            </a>
+
+            <a href="planner.html"
+               class="nav-link">
+                Planner
+            </a>
+
+            <a href="calculator.html"
+               class="nav-link">
+                Calculator
+            </a>
+
+            <a href="tips.html"
+               class="nav-link active">
+                Fresh Tips
+            </a>
+
+            <a href="offers.html"
+               class="nav-link">
+                Offers
+            </a>
+
+            <a href="about.html"
+               class="nav-link">
+                About
+            </a>
+
+            <a href="contact.html"
+               class="nav-link">
+                Contact
+            </a>
+
+        </nav>
+
+
+
+        <!-- CART -->
+
+        <a href="cart.html"
+           class="cart-button">
+
+            <span class="cart-icon">
+                🛒
+            </span>
+
+            <span class="cart-text">
+                Cart
+            </span>
+
+            <span class="cart-count">
+                0
+            </span>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN CONTENT
+     
+     FRESH TIPS CONTENT WILL BE ADDED HERE
+========================================================= -->
+
+<main>
+
+
+<!-- =========================================================
+     TIPS PAGE HERO
+========================================================= -->
+
+<section class="tips-hero">
+
+    <div class="container tips-hero-container">
+
+        <span class="eyebrow">SHOP SMARTER, WASTE LESS</span>
+
+        <h1>
+            Fresh Tips
+        </h1>
+
+        <p>
+            Practical, everyday advice for choosing fresher produce,
+            storing groceries longer, eating healthier, and keeping
+            your shopping budget under control.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CATEGORY FILTER
+========================================================= -->
+
+<section class="section tips-section">
+
+    <div class="container">
+
+        <div class="tips-filter" role="tablist" aria-label="Filter tips by category">
+
+            <button type="button" class="tips-filter-btn active" data-filter="all">
+                All Tips
+            </button>
+
+            <button type="button" class="tips-filter-btn" data-filter="storage">
+                Storage
+            </button>
+
+            <button type="button" class="tips-filter-btn" data-filter="shopping">
+                Shopping
+            </button>
+
+            <button type="button" class="tips-filter-btn" data-filter="healthy">
+                Healthy Eating
+            </button>
+
+            <button type="button" class="tips-filter-btn" data-filter="budget">
+                Budget
+            </button>
+
+        </div>
+
+
+        <!-- =====================================================
+             TIP CARDS
+        ====================================================== -->
+
+        <div class="tips-grid" id="tips-grid">
+
+            <article class="tip-card" data-category="storage">
+                <span class="tip-badge">STORAGE</span>
+                <h3>Keep leafy greens crisp for longer</h3>
+                <p>Wash, spin dry, and wrap leafy greens loosely in a paper towel before storing in a perforated bag. The paper towel absorbs excess moisture that would otherwise cause wilting.</p>
+            </article>
+
+            <article class="tip-card" data-category="shopping">
+                <span class="tip-badge">SHOPPING</span>
+                <h3>Shop the edges of the store first</h3>
+                <p>Fresh produce, dairy, and meat are usually along the outer aisles. Filling your cart here first naturally crowds out less healthy, heavily processed items from the centre aisles.</p>
+            </article>
+
+            <article class="tip-card" data-category="budget">
+                <span class="tip-badge">BUDGET</span>
+                <h3>Plan meals around what's on sale</h3>
+                <p>Check the week's offers before writing your list. Building 2-3 meals around discounted produce or proteins can meaningfully cut your weekly grocery bill.</p>
+            </article>
+
+            <article class="tip-card" data-category="healthy">
+                <span class="tip-badge">HEALTHY EATING</span>
+                <h3>Pick a colour from every group</h3>
+                <p>Different coloured fruits and vegetables carry different nutrients. Aiming for at least three colours in your basket is a quick way to diversify your diet without counting anything.</p>
+            </article>
+
+            <article class="tip-card" data-category="storage">
+                <span class="tip-badge">STORAGE</span>
+                <h3>Don't refrigerate tomatoes</h3>
+                <p>Cold temperatures break down the membranes inside tomatoes, turning the texture mealy and dulling the flavour. Keep them at room temperature, out of direct sunlight.</p>
+            </article>
+
+            <article class="tip-card" data-category="shopping">
+                <span class="tip-badge">SHOPPING</span>
+                <h3>Never shop on an empty stomach</h3>
+                <p>Studies consistently show hungry shoppers buy more impulse items and more calories overall. A small snack before you shop can noticeably shrink your final bill.</p>
+            </article>
+
+            <article class="tip-card" data-category="budget">
+                <span class="tip-badge">BUDGET</span>
+                <h3>Buy pantry staples in bulk</h3>
+                <p>Rice, oats, canned goods, and other long-life staples are usually cheaper per unit in larger packs. Only do this for items you know you'll use before they expire.</p>
+            </article>
+
+            <article class="tip-card" data-category="healthy">
+                <span class="tip-badge">HEALTHY EATING</span>
+                <h3>Read the ingredients, not just the label</h3>
+                <p>Front-of-pack claims like "natural" or "light" aren't strictly regulated. The ingredients list and nutrition panel on the back tell you what's actually in the product.</p>
+            </article>
+
+            <article class="tip-card" data-category="storage">
+                <span class="tip-badge">STORAGE</span>
+                <h3>Store potatoes and onions apart</h3>
+                <p>Onions release gases that speed up potato sprouting when stored together. Keep them in separate, cool, dark, well-ventilated spots for the longest shelf life.</p>
+            </article>
+
+            <article class="tip-card" data-category="budget">
+                <span class="tip-badge">BUDGET</span>
+                <h3>Use your freezer as a safety net</h3>
+                <p>Freeze bread, meat, and even some fruit before it turns. Turning "about to go off" into "frozen for later" is one of the simplest ways to stop paying for food you throw away.</p>
+            </article>
+
+        </div>
+
+        <p id="tips-empty-message" class="tips-empty-message" hidden>
+            No tips in this category yet — try another filter.
+        </p>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+            <a href="index.html"
+               class="brand footer-logo">
+
+                <div class="brand-icon">
+                    F
+                </div>
+
+                <div class="brand-text">
+
+                    <span class="brand-name">
+                        FRESHO
+                    </span>
+
+                    <span class="brand-tagline">
+                        Fresh Groceries. Better Living.
+                    </span>
+
+                </div>
+
+            </a>
+
+            <p>
+                Making everyday grocery shopping
+                simpler, smarter and fresher.
+            </p>
+
+        </div>
+
+
+
+        <!-- SHOP -->
+
+        <div class="footer-column">
+
+            <h3>
+                Shop
+            </h3>
+
+            <a href="products.html">
+                All Products
+            </a>
+
+            <a href="products.html">
+                Vegetables
+            </a>
+
+            <a href="products.html">
+                Fruits
+            </a>
+
+            <a href="products.html">
+                Pantry
+            </a>
+
+        </div>
+
+
+
+        <!-- SMART TOOLS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Smart Tools
+            </h3>
+
+            <a href="planner.html">
+                Grocery Planner
+            </a>
+
+            <a href="calculator.html">
+                Grocery Calculator
+            </a>
+
+            <a href="tips.html">
+                Fresh Tips
+            </a>
+
+            <a href="offers.html">
+                Offers
+            </a>
+
+        </div>
+
+
+
+        <!-- COMPANY -->
+
+        <div class="footer-column">
+
+            <h3>
+                Company
+            </h3>
+
+            <a href="about.html">
+                About FRESHO
+            </a>
+
+            <a href="contact.html">
+                Contact Us
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="container footer-bottom">
+
+        <p>
+            © 2026 FRESHO. All rights reserved.
+        </p>
+
+        <p>
+            Fresh Groceries. Better Living.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     MOBILE MENU JAVASCRIPT
+========================================================= -->
+
+<script>
+
+    const menuButton =
+        document.querySelector(".mobile-menu-btn");
+
+    const navigation =
+        document.querySelector(".main-nav");
+
+
+    if (menuButton && navigation) {
+
+        menuButton.addEventListener("click", function () {
+
+            navigation.classList.toggle("nav-open");
+
+        });
+
+    }
+
+</script>
+
+
+<!-- =========================================================
+     FRESH TIPS FILTER JAVASCRIPT
+========================================================= -->
+
+<script src="js/tips.js"></script>
+
+
+
+<!-- SHARED CART STORE - keeps the header cart
+     count correct on every page -->
+<script src="js/cart-store.js"></script>
+
+</body>
+
+</html>

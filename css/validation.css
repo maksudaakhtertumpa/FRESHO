@@ -1,0 +1,153 @@
+/* =========================================================
+   FRESHO - GROCERY CALCULATOR: VALIDATION STYLING
+   Error handling, input validation and error-message styling.
+
+   Layers on top of css/calculator.css. Adds:
+     - A shake cue for rows submitted with bad data
+     - A success highlight for the summary panel
+     - Small hover / focus polish across the calculator
+
+   The error text itself is styled in calculator.css as
+   .row-error, so that the message and the row it belongs to
+   are described in one place. The per-field .field-error rules
+   that used to live here were removed along with the duplicate
+   validator in js/validation.js.
+========================================================= */
+
+
+/* =========================================================
+   SHAKE CUE
+   Briefly shakes a grocery row when the user tries to submit
+   with that row still invalid - a clear, friendly "check this"
+   signal without any extra text.
+========================================================= */
+
+@keyframes calc-row-shake {
+
+    10%, 90% { transform: translateX(-1px); }
+    20%, 80% { transform: translateX(2px); }
+    30%, 50%, 70% { transform: translateX(-4px); }
+    40%, 60% { transform: translateX(4px); }
+}
+
+.grocery-row.shake {
+
+    animation: calc-row-shake 0.4s ease;
+}
+
+
+/* =========================================================
+   ROW ENTRANCE
+   A very small fade/slide so newly added rows (and the page's
+   first row) don't just pop into place.
+========================================================= */
+
+@keyframes calc-row-in {
+
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.grocery-row {
+
+    animation: calc-row-in 0.25s ease;
+}
+
+
+/* =========================================================
+   SUCCESS HIGHLIGHT
+   Triggered on the summary panel once a submission passes
+   every validation check.
+========================================================= */
+
+@keyframes calc-success-flash {
+
+    0% {
+        box-shadow: 0 0 0 0 rgba(67, 169, 95, 0.55);
+    }
+
+    100% {
+        box-shadow: 0 0 0 14px rgba(67, 169, 95, 0);
+    }
+}
+
+.calc-summary.success-flash {
+
+    animation: calc-success-flash 0.7s ease;
+}
+
+
+/* =========================================================
+   SMALL INTERACTION POLISH
+   Consistent hover/focus feedback across the calculator's
+   buttons and fields.
+========================================================= */
+
+.calculator-card .btn {
+
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.calculator-card .btn-primary:hover {
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 6px 14px rgba(16, 41, 31, 0.18);
+}
+
+.calculator-card .btn:active {
+
+    transform: translateY(0);
+}
+
+.remove-row-btn {
+
+    transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.remove-row-btn:hover {
+
+    transform: scale(1.08);
+}
+
+/* Consistent, visible focus ring for keyboard users across every
+   field in the calculator (accessibility). */
+.calculator-card input:focus-visible,
+.calculator-card button:focus-visible {
+
+    outline: 2px solid var(--green-500);
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   The shake and the success flash are decoration. If the
+   visitor has asked their system to reduce motion, the row
+   still turns red and the summary still updates - they just
+   do it without moving.
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .grocery-row,
+    .grocery-row.shake,
+    .calc-summary.success-flash {
+
+        animation: none;
+    }
+
+    .calculator-card .btn-primary:hover {
+
+        transform: none;
+    }
+
+}

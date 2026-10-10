@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f6b47'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='700' fill='white' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
+
+    <title>Products | FRESHO</title>
+
+    <meta name="description"
+          content="Shop fresh fruits, vegetables, dairy, pantry essentials and beverages at FRESHO.">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- PRODUCTS CSS -->
+    <link rel="stylesheet" href="css/products.css">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+          rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ANNOUNCEMENT BAR
+========================================================= -->
+
+<div class="announcement-bar">
+
+    <div class="container announcement-content">
+
+        <span>
+            Fresh groceries, made simple
+        </span>
+
+        <span class="announcement-right">
+            Free delivery on orders of RM80 and above
+        </span>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="site-header">
+
+    <div class="container nav-container">
+
+
+        <!-- LOGO -->
+
+        <a href="index.html"
+           class="brand">
+
+            <div class="brand-icon">
+                F
+            </div>
+
+            <div class="brand-text">
+
+                <span class="brand-name">
+                    FRESHO
+                </span>
+
+                <span class="brand-tagline">
+                    Fresh Groceries. Better Living.
+                </span>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- MOBILE MENU -->
+
+        <button class="mobile-menu-btn"
+                aria-label="Open navigation menu"
+                type="button">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="main-nav">
+
+            <a href="index.html"
+               class="nav-link">
+                Home
+            </a>
+
+            <a href="products.html"
+               class="nav-link active">
+                Products
+            </a>
+
+            <a href="planner.html"
+               class="nav-link">
+                Planner
+            </a>
+
+            <a href="calculator.html"
+               class="nav-link">
+                Calculator
+            </a>
+
+            <a href="tips.html"
+               class="nav-link">
+                Fresh Tips
+            </a>
+
+            <a href="offers.html"
+               class="nav-link">
+                Offers
+            </a>
+
+            <a href="about.html"
+               class="nav-link">
+                About
+            </a>
+
+            <a href="contact.html"
+               class="nav-link">
+                Contact
+            </a>
+
+        </nav>
+
+
+
+        <!-- CART -->
+
+        <a href="cart.html"
+           class="cart-button">
+
+            <span class="cart-icon">
+                🛒
+            </span>
+
+            <span class="cart-text">
+                Cart
+            </span>
+
+            <span class="cart-count"
+                  id="headerCartCount">
+                0
+            </span>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     PRODUCTS PAGE
+========================================================= -->
+
+<main class="products-page">
+
+
+    <!-- =====================================================
+         PRODUCTS HERO
+    ===================================================== -->
+
+    <section class="products-hero">
+
+        <div class="container products-hero-content">
+
+            <span class="eyebrow">
+                FRESH FROM FRESHO
+            </span>
+
+            <h1>
+                Everyday groceries,
+                <span>made fresher.</span>
+            </h1>
+
+            <p>
+                Discover fresh essentials, pantry favourites and
+                everyday products selected for your home.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SHOP SECTION
+    ===================================================== -->
+
+    <section class="shop-section">
+
+        <div class="container">
+
+
+            <!-- SHOP HEADER -->
+
+            <div class="shop-header section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        OUR COLLECTION
+                    </span>
+
+                    <h2>
+                        Shop groceries
+                    </h2>
+
+                </div>
+
+                <p id="productCount">
+                    16 products
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SEARCH + FILTER
+            ================================================= -->
+
+            <div class="shop-controls">
+
+
+                <!-- SEARCH -->
+
+                <div class="search-box">
+
+                    <span>
+                        🔍
+                    </span>
+
+                    <input
+                        type="search"
+                        id="productSearch"
+                        placeholder="Search groceries..."
+                        aria-label="Search groceries">
+
+                </div>
+
+
+
+                <!-- CATEGORY FILTER -->
+
+                <div class="category-filter">
+
+                    <button
+                        type="button"
+                        class="category-btn active"
+                        data-category="ALL">
+
+                        All
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="category-btn"
+                        data-category="FRUITS">
+
+                        Fruits
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="category-btn"
+                        data-category="VEGETABLES">
+
+                        Vegetables
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="category-btn"
+                        data-category="DAIRY">
+
+                        Dairy
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="category-btn"
+                        data-category="PANTRY">
+
+                        Pantry
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="category-btn"
+                        data-category="BEVERAGES">
+
+                        Beverages
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ERROR -->
+
+            <div id="productsError"
+                 class="products-error"
+                 role="alert">
+            </div>
+
+
+
+            <!-- =================================================
+                 PRODUCTS GRID
+            ================================================= -->
+
+            <div id="productsGrid"
+                 class="products-grid">
+
+                <!-- JavaScript will generate products -->
+
+            </div>
+
+
+
+            <!-- =================================================
+                 NO RESULTS
+            ================================================= -->
+
+            <div id="noProducts"
+                 class="no-products">
+
+                <div class="no-products-icon">
+                    🛒
+                </div>
+
+                <h3>
+                    No products found
+                </h3>
+
+                <p>
+                    Try another product name or category.
+                </p>
+
+                <button
+                    type="button"
+                    id="resetSearch">
+
+                    Show All Products
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+            <a href="index.html"
+               class="brand footer-logo">
+
+                <div class="brand-icon">
+                    F
+                </div>
+
+                <div class="brand-text">
+
+                    <span class="brand-name">
+                        FRESHO
+                    </span>
+
+                    <span class="brand-tagline">
+                        Fresh Groceries. Better Living.
+                    </span>
+
+                </div>
+
+            </a>
+
+            <p>
+                Making everyday grocery shopping
+                simpler, smarter and fresher.
+            </p>
+
+        </div>
+
+
+
+        <!-- SHOP -->
+
+        <div class="footer-column">
+
+            <h3>
+                Shop
+            </h3>
+
+            <a href="products.html">
+                All Products
+            </a>
+
+            <a href="products.html?category=VEGETABLES">
+                Vegetables
+            </a>
+
+            <a href="products.html?category=FRUITS">
+                Fruits
+            </a>
+
+            <a href="products.html?category=PANTRY">
+                Pantry
+            </a>
+
+        </div>
+
+
+
+        <!-- TOOLS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Smart Tools
+            </h3>
+
+            <a href="planner.html">
+                Grocery Planner
+            </a>
+
+            <a href="calculator.html">
+                Grocery Calculator
+            </a>
+
+            <a href="tips.html">
+                Fresh Tips
+            </a>
+
+            <a href="offers.html">
+                Offers
+            </a>
+
+        </div>
+
+
+
+        <!-- COMPANY -->
+
+        <div class="footer-column">
+
+            <h3>
+                Company
+            </h3>
+
+            <a href="about.html">
+                About FRESHO
+            </a>
+
+            <a href="contact.html">
+                Contact Us
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="container footer-bottom">
+
+        <p>
+            © 2026 FRESHO. All rights reserved.
+        </p>
+
+        <p>
+            Fresh Groceries. Better Living.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     PRODUCTS JAVASCRIPT
+========================================================= -->
+
+<script src="js/products.js"></script>
+
+
+
+<!-- SHARED CART STORE - keeps the header cart
+     count correct on every page -->
+<script src="js/cart-store.js"></script>
+
+</body>
+
+</html>

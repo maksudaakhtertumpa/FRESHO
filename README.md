@@ -1,3 +1,4 @@
+![FRESHO website preview](website%20page.jpg)
 # FRESHO – Online Grocery Store
 
 A responsive grocery store website built with plain **HTML, CSS and JavaScript**: no frameworks and no build step.
